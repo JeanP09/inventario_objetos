@@ -4,54 +4,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/static/css/consumibles.css">
-    <title>Objetos Consumibles - Inventario de Objetos</title>
+    <link rel="stylesheet" href="/static/css/quienes_somos.css">
+    <title>¿Quiénes somos? - Inventario de Objetos</title>
 </head>
 
 <body>
 
     <!-- Barra de Menú -->
     <div class="navbar">
-        <ul class="opcionesMenu">
+        <ul> 
             <!-- Logo -->
             <!-- <li><a href="/#home" class="logo">
                     <img src="/static/img/facebook.png">
-                </a></li> -->
-
+                </a></li> --> 
+                
             <li><a href="/templates/homepage.html"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="/templates/quienes_somos.html"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
+            <li><a class="active" href="/templates/quienes_somos.html"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
             <li><a href="/templates/sobre_nosotros.html"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
-            <li><a href="/templates/logout.html"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <li><a href="/templates/login.html"><i class="fa fa-fw fa-user"></i> Iniciar Sesión</a></li>
+            <li><a href="/templates/register.html"><i class="fa fa-fw fa-user"></i> Registrarme</a></li>
         </ul>
     </div>
-
-
-    <!-- Menú Lateral -->
-
-    <div class="menu-btn" id="menu-btn">
-        <i class="fas fa-bars"></i>
-    </div>
-    <div class="sidebar" id="sidebar">
-        <div class="header">
-            <img src="/static/img/" alt="">
-            <h2>SENA</h2>
-            <div class="close-btn" id="close-btn">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        <ul>
-            <li><a href="/templates/objetos.html">Objetos</a></li>
-            <li><a href="/templates/prestamos.html">Préstamos</a></li>
-            <li><a href="/templates/reportes.html">Reportes</a></li>
-            <li><a href="/templates/instructores.html">Instructores</a></li>
-        </ul>
-    </div>
-
 
     <!-- Contenido -->
-    <h1>Consumibles</h1>
+
+    <section class="contenido" id="contenido">
+
+        <div class="contenido_texto">
+            <h2>¿Quiénes somos?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Corrupti deserunt ratione, pariatur, rerum culpa labore
+                quod commodi explicabo suscipit, illum impedit fuga assumenda
+                aut cumque dolor eaque temporibus! Enim molestiae provident neque
+                deserunt voluptatum nam commodi nihil aspernatur quo vero.</p>
+        </div>
+    </section>
+
+
 
 
     <!-- Footer -->
@@ -72,7 +62,6 @@
         <p>&copy; 2024 Servicio Nacional de Aprendizaje - SENA</p>
     </footer>
 
-    <script src="/static/javascripts/menu_lateral.js"></script>
 </body>
 
 </html>
