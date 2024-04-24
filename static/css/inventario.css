@@ -178,7 +178,7 @@ h1 {
     width: 200px;
     height: 200px;
     margin: 10px;
-    border-radius: 50%;
+    border-radius: 5%;
     background-color: #39a900;
     color: #fff;
     transition: background-color 0.3s;
