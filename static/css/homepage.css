@@ -41,6 +41,11 @@ body {
     font-weight: bold;
 }
 
+.navbar .active {
+    background-color: #00324D;
+    border-radius: 5px;
+}
+
 .navbar a:hover {
     color: #000;
 }
