@@ -13,12 +13,12 @@
 
     <!-- Barra de Menú -->
     <div class="navbar">
-        <ul> 
+        <ul>
             <!-- Logo -->
             <!-- <li><a href="/#home" class="logo">
                     <img src="/static/img/facebook.png">
-                </a></li> --> 
-                
+                </a></li> -->
+
             <li><a href="/templates/homepage.html"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="/templates/quienes_somos.html"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
             <li><a href="/templates/sobre_nosotros.html"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
@@ -29,6 +29,46 @@
 
     <!-- Contenido -->
 
+    <header class="header">
+
+        <div class="search">
+
+        </div>
+    </header>
+    <div class="background"></div>
+    <section class="home">
+        <div class="content">
+            <a href="#" class="logo"></a>
+            <h2>¡Bienvenido!</h2>
+            <h3>Inventario de Objetos en Bodega</h3>
+            <pre>"EL ORDEN ES LA MEJOR SOLUCIÓN"</pre>
+        </div>
+
+        <div class="login">
+            <h2>Inicia sesión</h2>
+            <form action="/login" method="post"> <!-- Cambiado a "/login" -->
+                <div class="input">
+                    <input type="text" class="input1" placeholder="Correo electrónico" required name="txtCorreo">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input">
+                    <input type="password" class="input1" placeholder="Contraseña" required name="txtPassword">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+                <div class="check">
+                    <label> <input type="checkbox">Recordar</label>
+                    <a href="#">¿Olvido su contraseña?</a>
+                </div>
+                <div class="button">
+                    <button class="btn">Iniciar sesion</button>
+                </div>
+                <div class="sign-up">
+                    <p>¿No tienes una cuenta?</p>
+                    <a class="nav-link" href="/registro" style="margin-left: 10px;">Registrate</a>
+                </div>
+            </form>
+        </div>
+    </section>
 
 
     <!-- Footer -->

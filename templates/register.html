@@ -13,12 +13,12 @@
 
     <!-- Barra de Menú -->
     <div class="navbar">
-        <ul> 
+        <ul>
             <!-- Logo -->
             <!-- <li><a href="/#home" class="logo">
                     <img src="/static/img/facebook.png">
-                </a></li> --> 
-                
+                </a></li> -->
+
             <li><a href="/templates/homepage.html"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="/templates/quienes_somos.html"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
             <li><a href="/templates/sobre_nosotros.html"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
@@ -29,6 +29,56 @@
 
     <!-- Contenido -->
 
+    <form class="formulario" method="POST" action="/registro">
+        <h1>Regístrate</h1>
+        <br>
+        <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input type="text" placeholder="Nombre completo" pattern="[A-Za-z\s]+"
+                title="Ingrese solo letras y espacios" required name="txtNombre">
+        </div>
+        <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <input type="text" placeholder=" Apellidos" pattern="[A-Za-z\s]+" title="Ingrese solo letras y espacios"
+                required name="txtApellido">
+        </div>
+        <div class="input-contenedor">
+            <i class="fa-solid fa-envelope icon"></i>
+            <input type="text" placeholder=" Correo" required name="txtCorreo">
+        </div>
+        <div class="input-contenedor">
+            <i class="fas fa-user icon"></i>
+            <select name="txtTipoDoc" required>
+                <option value="" disabled selected>Selecciona el tipo de documento</option>
+                <option value="CC">Cédula de Ciudadanía</option>
+                <option value="CE">Cédula de Extranjería</option>
+                <option value="PP">Pasaporte</option>
+            </select>
+        </div>
+        <div class="input-contenedor">
+            <i class="fas fa-id-card icon"></i>
+            <input type="text" placeholder=" Número de documento" pattern="[0-9]+" title="Ingrese solo números" required
+                name="txtNumeroDocumento">
+        </div>
+        <div class="input-contenedor">
+            <i class="fas fa-calendar icon"></i>
+            <input type="date" placeholder=" Fecha de nacimiento" required name="txtFechaNacimiento">
+        </div>
+        <div class="input-contenedor">
+            <i class="fas fa-phone icon"></i>
+            <input type="tel" placeholder=" Celular" pattern="[0-9]+" title="Ingrese solo números" required
+                name="txtNumeroTelefono">
+        </div>
+        <div class="input-contenedor">
+            <i class="fa-solid fa-lock icon"></i>
+            <input type="text" placeholder=" Contraseña" title="Ingrese solo letras y numeros" required
+                name="txtPassword">
+        </div>
+        <input type="submit" value="Registrarme" class="button">
+        <p>Al registrarte aceptas los términos y condiciones</p>
+        <p>¿Ya tienes cuenta? <a class="link" href="/templates/login.html">Iniciar Sesión</a></p>
+        </div>
+    </form>
 
 
     <!-- Footer -->

@@ -28,7 +28,6 @@ body {
 .logo img {
     height: 70px;
     width: auto;
-    
 }
 
 .navbar a {
@@ -68,48 +67,93 @@ li a {
     flex: 1;
 }
 
-/* Contenido Texto */
-.contenido {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-    gap: 4.5rem;
-    margin-top: 70px;
-    padding-bottom: 100px;
+/* Contenido */
+h1 {
+    padding: auto;
+    text-align: center;
+    color: #39a900;
 }
 
-.contenido_texto h2 {
-    font-size: 40px;
+.formulario {
+    max-width: 400px;
+    margin: 40px auto 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.input-contenedor {
+    position: relative;
     margin-bottom: 15px;
-    font-weight: bold;
-    color: #000;
-    margin-left: 2rem;
 }
 
-.contenido_texto p {
-    font-size: 15px;
-    color: #000;
-    line-height: 30px;
-    margin-bottom: 25px;
-    margin-left: 2rem;
+.icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #555;
 }
 
-.boton {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #000;
+.input-contenedor input {
+    padding: 10px;
+    width: 360px;
+    padding-left: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.input-contenedor select {
+    width: calc(100%);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    background-color: #fff;
+    color: #555;
+    padding-left: 30px;
+}
+
+.input-contenedor select:hover {
+    border-color: #888;
+}
+
+.input-contenedor select:focus {
+    border-color: #39a900;
+    box-shadow: 0 0 5px rgba(57, 169, 0, 0.5);
+}
+
+
+
+.button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #39a900;
     color: #fff;
-    border-radius: .70rem;
-    font-size: 17px;
-    font-weight: 500;
-    transition: all .50s ease;
-    text-decoration: none;
-    margin-left: 2rem;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.boton:hover {
-    transform: translateY(-7px) scale(0.9);
+.button:hover {
+    background-color: #256f00;
 }
+
+.link {
+    color: #39a900;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
 
 /* Footer */
 
