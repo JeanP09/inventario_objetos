@@ -1,3 +1,4 @@
+#COMMIT EN GIT HUB: git commit -m "Texto que quieras poner"
 # Declarando nombre de la aplicación e inicializando, crear la aplicación Flask
 from app import app
 
