@@ -51,7 +51,33 @@
 
 
     <!-- Contenido -->
-    <h1>Consumibles</h1>
+
+    <a class="regresar-btn">
+        <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+    
+    <h1>Objetos Consumibles</h1>
+
+
+    <div class="search-container">
+        <input type="text" placeholder="Buscar...">
+        <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Buscar
+        </button>
+
+        <div class="filter-dropdown">
+            <button class="filter-btn">
+                <i class="fa-solid fa-sliders"></i> Filtrar
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Menor stock</a>
+                <a href="#">Mayor stock</a>
+                <a href="#">Ordenar A-Z</a>
+                <a href="#">Formación</a>
+                <a href="#">Consumibles</a>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Footer -->
@@ -73,6 +99,7 @@
     </footer>
 
     <script src="/static/javascripts/menu_lateral.js"></script>
+    <script src="/static/javascripts/filtrar.js"></script>
 </body>
 
 </html>
