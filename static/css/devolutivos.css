@@ -151,7 +151,7 @@ body {
 /* Contenido */
 
 h1 {
-    margin-top: auto;
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     font-size: 40px;
@@ -159,50 +159,101 @@ h1 {
     color: #2a7d00;
 }
 
+.regresar {
+    margin-top: 10px;
+    margin-left: auto;
+    color: #39a900;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    font-size: large;
+    text-decoration: none;
+}
+
+.regresar:hover {
+    color: #2a7d00;
+}
+
 .container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: auto; 
-    max-width: 800px;
-    margin: 0 auto;
 }
 
-.round-button {
+/* Estilos para barra de búsqueda */
+
+.search-container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-    width: 200px;
-    height: 200px;
-    margin: 10px;
-    border-radius: 50%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-container button {
+    padding: 10px 20px;
     background-color: #39a900;
     color: #fff;
-    transition: background-color 0.3s;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
 }
 
-.round-button:hover {
-    background-color: #176b00;
+.search-container button:hover {
+    background-color: #2a7d00;
 }
 
-.round-button i {
-    font-size: 36px;
-    margin-bottom: 10px;
+/* Estilos para botón de filtrado */
+
+.filter-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
 }
 
-.round-button span {
-    font-size: 20px;
+.filter-btn {
+    padding: 10px;
+    background-color: #39a900;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-.round-button.left {
-    margin-right: auto;
+.filter-btn:hover {
+    background-color: #2a7d00;
 }
 
-.round-button.right {
-    margin-left: auto;
+.filter-btn i {
+    margin-right: 5px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #d0d0d0;
+}
+
+.show {
+    display: block;
 }
 
 /* Footer */
