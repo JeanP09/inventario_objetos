@@ -20,10 +20,10 @@
                     <img src="/static/img/facebook.png">
                 </a></li> -->
 
-            <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="/quienes_somos"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
-            <li><a href="/sobre_nosotros"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
-            <li><a href="/templates/logout.html"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <li><a href="/templates/homepage.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="/templates/quienes_somos.html"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
+            <li><a href="/templates/sobre_nosotros.html"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
+            <li><a href="/templates/login.html"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
         </ul>
     </div>
 
@@ -51,7 +51,33 @@
 
 
     <!-- Contenido -->
-    <h1>Consumibles</h1>
+
+    <a href="./objetos.html" class="regresar">
+        <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+    
+    <h1>Objetos Consumibles</h1>
+
+
+    <div class="search-container">
+        <input type="text" placeholder="Buscar...">
+        <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i> Buscar
+        </button>
+
+        <div class="filter-dropdown">
+            <button class="filter-btn">
+                <i class="fa-solid fa-sliders"></i> Filtrar
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Menor stock</a>
+                <a href="#">Mayor stock</a>
+                <a href="#">Ordenar A-Z</a>
+                <a href="#">Formación</a>
+                <a href="#">Consumibles</a>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Footer -->
@@ -60,11 +86,11 @@
         <h3>www.sena.edu.co</h3>
         <nav>
             <ul>
-                <li><a href="#"><img src="/static/img/instagram.png" alt="instagram_icon"></a></li>
-                <li><a href="#"><img src="/static/img/facebook.png" alt="facebook_icon"></a></li>
-                <li><a href="#"><img src="/static/img/twitter.png" alt="twitter_icon"></a></li>
-                <li><a href="#"><img src="/static/img/youtube.png" alt="youtube_icon"></a></li>
-                <li><a href="#"><img src="/static/img/linkedin.png" alt="linkedin_icon"></a></li>
+                <li><a href="https://www.instagram.com/senacomunica/"><img src="/static/img/instagram.png" alt="instagram_icon"></a></li>
+                <li><a href="https://www.facebook.com/SENA/"><img src="/static/img/facebook.png" alt="facebook_icon"></a></li>
+                <li><a href="https://twitter.com/SENAComunica"><img src="/static/img/gorjeo.png" alt="twitter_icon"></a></li>
+                <li><a href="https://www.youtube.com/@SENAComunica"><img src="/static/img/youtube.png" alt="youtube_icon"></a></li>
+                <li><a href="https://linkedin.com/school/servicio-nacional-de-aprendizaje-sena-/"><img src="/static/img/linkedin.png" alt="linkedin_icon"></a></li>
             </ul>
             <p>@SENAComunica</p>
         </nav>
@@ -73,6 +99,7 @@
     </footer>
 
     <script src="/static/javascripts/menu_lateral.js"></script>
+    <script src="/static/javascripts/filtrar.js"></script>
 </body>
 
 </html>
