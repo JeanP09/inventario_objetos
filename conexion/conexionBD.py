@@ -9,7 +9,7 @@ def connectionBD():
             host="localhost",
             user="root",
             passwd="",
-            database="PalaceProductions",
+            database="fabrica",
             charset='utf8mb4',
             collation='utf8mb4_unicode_ci',
             raise_on_warnings=True

@@ -1,6 +1,7 @@
 from flask import Flask, session, request, render_template, redirect, Response, url_for, flash
 from flask import Blueprint
 from conexion.conexionBD import connectionBD
+from funciones import *
 blueprint = Blueprint('blueprint',__name__)
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -11,10 +12,15 @@ def home():
     return render_template('homepage.html')
 
 #LOGIN - INICIO DE SESION
-@app.route('/login' , methods = ["GET" , "POST"])
+@app.route('/loginUsu', methods=["GET", "POST"])
 def login_route():
-    return render_template ('login.html')
-
+    if request.method == 'POST': #le digo que viene de un dato requerido por POST
+        if login(request):
+            return render_template('ingresoExitoso.html')#INGRESO AL SISTEMA 
+        else:
+            return render_template('login.html') #DATOS INCORRECTOS, REDIRECCIONA LOGIN NUEVAMENTE
+    else:
+        return render_template('login.html') #SI TODA LA CONSULTA FALLA RENDERIZA LOGIN NUEVAMENTE
 #REGISTRARME
 @app.route('/register')
 def registrar_usuarios():
