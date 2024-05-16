@@ -90,18 +90,9 @@ a:-webkit-any-link {
 }
 
 .row1 {
-    background: #fff;
+    background: #eeeeee;
 }
 
-.row1 {
-    height: 108px;
-    background: -webkit-linear-gradient(left, #ffffff 60%, #f8f8f8 20%, #f1f0ee 100%);
-    background: -o-linear-gradient(left, #ffffff, #f8f8f8, #f1f0ee);
-    background: -moz-linear-gradient(left, #ffffff, #f8f8f8, #f1f0ee);
-    background: linear-gradient(left, #ffffff, #f8f8f8, #f1f0ee);
-    background-image: linear-gradient(-90deg, #f1f0ee 0%, #f8f8f8 50%, #ffffff 80%);
-    background-color: white;
-}
 
 .wrapper {
     display: block;
@@ -121,8 +112,9 @@ a:-webkit-any-link {
 }
 
 #header .logoSena {
-    padding: 65px 0 !important;
+    padding: 45px 0 !important;
     max-width: 165px;
+    margin-left: 120px;
     background-color: transparent;
     -moz-transform: skewX(20deg);
     -webkit-transform: skewX(20deg);
@@ -236,7 +228,8 @@ img {
     overflow: clip;
 }
 
-.header .top, .footer .bottom {
+.header .top,
+.footer .bottom {
     height: 40px;
     padding: 8px 0;
     background: #015dca;

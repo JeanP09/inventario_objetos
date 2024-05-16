@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.gov-co-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
 div {
     display: block;
     unicode-bidi: isolate;
@@ -179,7 +185,7 @@ a,
 a:-webkit-any-link {
     color: -webkit-link;
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .gov-co-footer .gov-co-footer-presetacion>.gov-co-footer-autoridad>.footer-politicas {
@@ -287,16 +293,12 @@ a:visited {
 }
 
 .gov-co-footer .gov-co-footer-presetacion>.gov-co-footer-autoridad>.footer-politicas>div>div>div>.gov-co-politicas {
-    display: -webkit-box;
     display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     flex-flow: row wrap;
     -webkit-box-pack: justify;
-    justify-content: space-between;
     align-content: center;
-    height: 50px;
-    padding: 15px;
 }
 
 .footer-logo-autoridad img {
@@ -357,6 +359,8 @@ img {
 
 
 
+
+
 @media (min-width: 576px) {
     .gov-co-footer .gov-co-footer-presetacion>.gov-co-footer-autoridad>.footer-logo-autoridad {
         width: 100%;
@@ -404,7 +408,7 @@ img {
         text-align: center;
         width: 100%;
     }
-    
+
     .gov-co-footer .gov-co-footer-presetacion>.gov-co-footer-autoridad>.footer-presentacion {
         width: 60%;
     }
