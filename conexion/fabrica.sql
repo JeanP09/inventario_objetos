@@ -77,7 +77,7 @@ CREATE TABLE `productosgenerales` (
 --
 -- Estructura de tabla para la tabla `usuarios`
 --
-DROP TABLE `usuarios` (
+CREATE TABLE `usuarios` (
   `IdUsuario` int NOT NULL AUTO_INCREMENT,
   `NombreUsuario` varchar(255) DEFAULT NULL,
   `ApellidoUsuario` varchar(255) DEFAULT NULL,
@@ -85,8 +85,8 @@ DROP TABLE `usuarios` (
   `NumeroIdentificacion` int(11) DEFAULT NULL,
   `CorreoUsuario` varchar(255) DEFAULT NULL,
   `CelularUsuario` int(11) DEFAULT NULL,
-  `ContrasenaUsuario` varchar(50) 
-  
+  `ContrasenaUsuario` varchar(50),
+  PRIMARY KEY (`IdUsuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 INSERT INTO usuarios (NombreUsuario, ApellidoUsuario, TipoIdentificacion, NumeroIdentificacion, CorreoUsuario, CelularUsuario, ContrasenaUsuario)
 VALUES
