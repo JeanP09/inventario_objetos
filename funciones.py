@@ -6,7 +6,6 @@ from plyer import notification
 blueprint = Blueprint('blueprint',__name__)
 
 
-
 #FUNCION LOGIN
 def login(request):
     try:
@@ -16,8 +15,8 @@ def login(request):
             _password = request.form['txtPassword']
 
             cur = connection.cursor(dictionary=True)
-            cur.execute('SELECT * FROM usuarios WHERE CorreoUsuario = %s AND contrasena = %s', (_correo, _password,))
-            account = cur.fetchall()
+            cur.execute('SELECT * FROM usuarios WHERE CorreoUsuario = %s AND ContrasenaUsuario = %s LIMIT 1', (_correo, _password,))
+            account = cur.fetchone()
             cur.close()
 
             if account:
