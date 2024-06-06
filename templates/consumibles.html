@@ -52,7 +52,7 @@
 
     <!-- Contenido -->
 
-    <a href="./objetos.html" class="regresar">
+    <a href="/objetos" class="regresar">
         <i class="fas fa-arrow-left"></i> Regresar
     </a>
     
@@ -60,10 +60,12 @@
 
 
     <div class="search-container">
-        <input type="text" placeholder="Buscar...">
-        <button type="submit">
+    <form name="formSearch" method = "POST" action="{{ url_for('BuscarObjeto') }}" class = "search" autocomplete="off">
+        <input type="search" name = "buscar" class = "search_input" placeholder="Buscar...">
+        <button type="submit" class="search_btn">
             <i class="fa-solid fa-magnifying-glass"></i> Buscar
         </button>
+    </form>
 
         <div class="filter-dropdown">
             <button class="filter-btn">
@@ -79,6 +81,14 @@
         </div>
     </div>
 
+    <div id = "RespBusq">
+        {% block body%}
+
+        <h1 class = "text-center">
+            Buscar Objeto
+        </h1>
+        {% endblock %}
+    </div>
 
     <!-- Footer -->
 

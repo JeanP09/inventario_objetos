@@ -32,3 +32,20 @@ def login(request):
             connection.close()
 
     return False  # Autenticación fallida
+
+#FUNCION BUSCAR OBJETO
+def BuscarObjeto():
+    if request.method == "POST":
+        search = request.form['buscar']
+        connection = connectionBD()
+        cur = connection.cursor(dictionary=True)
+        querySQL = cur.execute("SELECT * FROM productosgenerales WHERE NombreProducto='%s' ORDER BY id DESC" % (search,))
+        resultadoBusqueda = cur.fetchone()
+        cur.close()
+        return render_template('resultadoBusqueda.html', miData = resultadoBusqueda, busqueda = search)
+    return render_template ("/")
+
+
+
+        
+    

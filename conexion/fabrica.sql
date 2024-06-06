@@ -64,13 +64,24 @@ CREATE TABLE `prestamos` (
 --
 
 CREATE TABLE `productosgenerales` (
-  `IdProducto` int(11) NOT NULL,
+  `IdProducto` int NOT NULL AUTO_INCREMENT,
   `NombreProducto` varchar(225) DEFAULT NULL,
   `DescripcionProducto` varchar(225) DEFAULT NULL,
-  `TipoProducto` enum('Devolutivos','Consumibles/Formación') DEFAULT NULL,
-  `CantidadProducto` int(11) DEFAULT NULL,
-  `ObservacionesProducto` varchar(225) DEFAULT NULL
+  `TipoProducto` varchar(20) DEFAULT NULL,
+  `CantidadProducto` int DEFAULT NULL,
+  `ObservacionesProducto` varchar(225) DEFAULT NULL,
+  PRIMARY KEY (`IdProducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO productosgenerales (NombreProducto, DescripcionProducto, TipoProducto, CantidadProducto, ObservacionesProducto)
+VALUES
+    ('Marcador', 'Marcador Sharpee Negro', 'Consumibles', 10, 'NO BORRABLE'),
+    ('Computador', 'PORTATIL APPLE', 'Devolutivos', 2, 'NO FUNCIONA LA LETRA S'),
+    ('Cable LAN', '2 METROSxCaja', 'Consumibles', 15, 'N/A'),
+    ('Mouse Logitech', 'Mouse referencia: 81927', 'Devolutivos', 4, 'BUEN ESTADO'),
+    ('Borrador', 'Borrador tablero nuevo', 'Consumibles', 22, 'NUEVOS');
+
+SELECT * FROM productosgenerales;
 
 -- --------------------------------------------------------
 
@@ -90,7 +101,8 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 INSERT INTO usuarios (NombreUsuario, ApellidoUsuario, TipoIdentificacion, NumeroIdentificacion, CorreoUsuario, CelularUsuario, ContrasenaUsuario)
 VALUES
-    ('Santiago', 'Urrea', 'CC', 1031648741, 'santi@gmail.com',  3246016033, 'santi777');
+    ('Santiago', 'Urrea', 'CC', 1031648741, 'santi@gmail.com',  3246016033, 'santi777'),
+    ('Juan', 'Guzman', 'CC', 101781711, 'jp@gmail.com',  3105527890, 'jp777');
 	select*from usuarios;
 
 --
