@@ -207,6 +207,56 @@ h1 {
     background-color: #2a7d00;
 }
 
+.table-responsive{
+	overflow: auto;
+}
+.table-responsive{
+	width: 100%;
+	overflow-x: scroll;
+	position: relative;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: scroll;
+    position: relative;
+}
+.table-responsive {
+    overflow: auto;
+}
+.full-width {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.mdl-shadow--2dp {
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+.mdl-data-table {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, .12);
+    border-collapse: collapse;
+    white-space: nowrap;
+    font-size: 13px;
+    background-color: #fff;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    unicode-bidi: isolate;
+    border-spacing: 2px;
+    border-color: gray;
+}
+
+
 /* Estilos para botón de filtrado */
 
 .filter-dropdown {
