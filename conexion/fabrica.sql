@@ -127,12 +127,6 @@ ALTER TABLE `prestamos`
   ADD KEY `IdProducto` (`IdProducto`);
 
 --
--- Indices de la tabla `productosgenerales`
---
-ALTER TABLE `productosgenerales`
-  ADD PRIMARY KEY (`IdProducto`);
-
---
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`

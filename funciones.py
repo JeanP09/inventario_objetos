@@ -35,15 +35,21 @@ def login(request):
 
 #FUNCION BUSCAR OBJETO
 def BuscarObjeto():
-    if request.method == "POST":
-        search = request.form['buscar']
-        connection = connectionBD()
-        cur = connection.cursor(dictionary=True)
-        querySQL = cur.execute("SELECT * FROM productosgenerales WHERE NombreProducto='%s' ORDER BY id DESC" % (search,))
-        resultadoBusqueda = cur.fetchone()
-        cur.close()
-        return render_template('resultadoBusqueda.html', miData = resultadoBusqueda, busqueda = search)
-    return render_template ("/")
+    try:
+        if request.method == "POST":
+            search = request.form['buscar']
+            connection = connectionBD()
+            cur = connection.cursor(dictionary=True)
+            cur.execute("SELECT * FROM productosgenerales WHERE NombreProducto LIKE %s ORDER BY id DESC", (f"%{search}%",))
+            resultadoBusqueda = cur.fetchall()
+            cur.close()
+            return render_template('resultadoBusqueda.html', miData=resultadoBusqueda, busqueda=search)
+    except Exception as e:
+        print(f"Error en la función BuscarObjeto: {e}")
+    finally:
+        if connection.is_connected():
+            connection.close()
+    return render_template('/')
 
 
 

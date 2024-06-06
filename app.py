@@ -23,12 +23,12 @@ def login_route():
         return render_template('login.html') #SI TODA LA CONSULTA FALLA RENDERIZA LOGIN NUEVAMENTE
 
 #BUSCAR OBJETOS ----
-@app.route('/Objconsumibles' , methods =['GET', 'POST'])
+@app.route('/Objconsumibles', methods=['GET', 'POST'])
 def search_route():
     if request.method == 'POST':
-        pass
+        return BuscarObjeto()
     else:
-        return render_template ('objetos.html')
+        return render_template('objetos.html')
 #REGISTRARME
 @app.route('/register')
 def registrar_usuarios():

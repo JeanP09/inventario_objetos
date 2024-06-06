@@ -60,12 +60,13 @@
 
 
     <div class="search-container">
-    <form name="formSearch" method = "POST" action="{{ url_for('BuscarObjeto') }}" class = "search" autocomplete="off">
-        <input type="search" name = "buscar" class = "search_input" placeholder="Buscar...">
-        <button type="submit" class="search_btn">
-            <i class="fa-solid fa-magnifying-glass"></i> Buscar
-        </button>
-    </form>
+        <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search" autocomplete="off">
+            <input type="search" name="buscar" class="search_input" placeholder="Buscar...">
+            <button type="submit" class="search_btn">
+                <i class="fa-solid fa-magnifying-glass"></i> Buscar
+            </button>
+        </form>
+        
 
         <div class="filter-dropdown">
             <button class="filter-btn">
