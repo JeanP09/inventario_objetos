@@ -6669,6 +6669,7 @@ fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
     color: inherit;
 }
 
+
 .mdl-textfield__input[type="number"] {
     -moz-appearance: textfield
 }

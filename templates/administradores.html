@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-    <link rel="stylesheet" href="/static/css/instructores.css">
+    <link rel="stylesheet" href="/static/css/administradores.css">
     <link rel="stylesheet" href="/static/css/material.min.css">
     <link rel="stylesheet" href="/static/css/main.css">
-    <title>Instructores - Inventario de Objetos</title>
+    <title>Administradores - Inventario de Objetos</title>
 </head>
 
 <body>
@@ -61,12 +61,12 @@
         <i class="fas fa-arrow-left"></i> Regresar
     </a>
 
-    <h1>Instructores</h1>
+    <h1>Administradores</h1>
 
 
     <section class="full-width header-well">
         <div class="full-width header-well-icon">
-            <i class="fa-solid fa-chalkboard-user"></i>
+            <i class="fa-solid fa-user-tie"></i>
         </div>
         <div class="full-width header-well-text">
             <p class="text-condensedLight">
@@ -77,22 +77,22 @@
     </section>
     <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
         <div class="mdl-tabs__tab-bar">
-            <a href="#tabNewClient" class="mdl-tabs__tab is-active">Nuevo</a>
-            <a href="#tabListClient" class="mdl-tabs__tab">Lista</a>
+            <a href="#tabNewAdmin" class="mdl-tabs__tab is-active">Nuevo</a>
+            <a href="#tabListAdmin" class="mdl-tabs__tab">Lista</a>
         </div>
-        <div class="mdl-tabs__panel is-active" id="tabNewClient">
+        <div class="mdl-tabs__panel is-active" id="tabNewAdmin">
             <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--12-col">
                     <div class="full-width panel mdl-shadow--2dp">
                         <div class="full-width panel-tittle bg-primary text-center tittles">
-                            Nuevo Instructor
+                            Nuevo Administrator
                         </div>
                         <div class="full-width panel-content">
                             <form>
                                 <div class="mdl-grid">
                                     <div class="mdl-cell mdl-cell--12-col">
                                         <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
-                                            &nbsp; DATOS INSTRUCTOR</legend><br>
+                                            &nbsp; DATOS ADMINISTRADOR</legend><br>
                                     </div>
                                     <div class="mdl-cell mdl-cell--12-col">
                                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
@@ -232,7 +232,7 @@
                                         id="btn-addAdmin">
                                         <i class="fa-solid fa-plus"></i>
                                     </button>
-                                <div class="mdl-tooltip" for="btn-addAdmin">Agregar Instructor</div>
+                                <div class="mdl-tooltip" for="btn-addAdmin">Agregar Administrador</div>
                                 </p>
                             </form>
                         </div>
@@ -240,22 +240,22 @@
                 </div>
             </div>
         </div>
-        <div class="mdl-tabs__panel" id="tabListClient">
+        <div class="mdl-tabs__panel" id="tabListAdmin">
             <div class="mdl-grid">
                 <div
                     class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
                     <div class="full-width panel mdl-shadow--2dp">
                         <div class="full-width panel-tittle bg-success text-center tittles">
-                            Lista Instructores
+                            Lista de Administradores
                         </div>
                         <div class="full-width panel-content">
                             <form action="#">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                                    <label class="mdl-button mdl-js-button mdl-button--icon" for="searchClient">
+                                    <label class="mdl-button mdl-js-button mdl-button--icon" for="searchAdmin">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </label>
                                     <div class="mdl-textfield__expandable-holder">
-                                        <input class="mdl-textfield__input" type="text" id="searchClient">
+                                        <input class="mdl-textfield__input" type="text" id="searchAdmin">
                                         <label class="mdl-textfield__label"></label>
                                     </div>
                                 </div>
@@ -264,7 +264,7 @@
                                 <div class="mdl-list__item mdl-list__item--two-line">
                                     <span class="mdl-list__item-primary-content">
                                         <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                        <span>1. Nombre instructor</span>
+                                        <span>1. Nombre de Administrador</span>
                                         <span class="mdl-list__item-sub-title">Número de Identificación</span>
                                     </span>
                                     <a class="mdl-list__item-secondary-action" href="#!"><i
@@ -274,7 +274,7 @@
                                 <div class="mdl-list__item mdl-list__item--two-line">
                                     <span class="mdl-list__item-primary-content">
                                         <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                        <span>2. Nombre instructor</span>
+                                        <span>2. Nombre de Administrador</span>
                                         <span class="mdl-list__item-sub-title">Número de Identificación</span>
                                     </span>
                                     <a class="mdl-list__item-secondary-action" href="#!"><i
@@ -284,7 +284,7 @@
                                 <div class="mdl-list__item mdl-list__item--two-line">
                                     <span class="mdl-list__item-primary-content">
                                         <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                        <span>3. Nombre instructor</span>
+                                        <span>3. Nombre de Administrador</span>
                                         <span class="mdl-list__item-sub-title">Número de Identificación</span>
                                     </span>
                                     <a class="mdl-list__item-secondary-action" href="#!"><i
@@ -294,7 +294,7 @@
                                 <div class="mdl-list__item mdl-list__item--two-line">
                                     <span class="mdl-list__item-primary-content">
                                         <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                        <span>4. Nombre instructor</span>
+                                        <span>4. Nombre de Administrador</span>
                                         <span class="mdl-list__item-sub-title">Número de Identificación</span>
                                     </span>
                                     <a class="mdl-list__item-secondary-action" href="#!"><i
@@ -304,27 +304,7 @@
                                 <div class="mdl-list__item mdl-list__item--two-line">
                                     <span class="mdl-list__item-primary-content">
                                         <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                        <span>5. Nombre instructor</span>
-                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                    </span>
-                                    <a class="mdl-list__item-secondary-action" href="#!"><i
-                                            class="zmdi zmdi-more"></i></a>
-                                </div>
-                                <li class="full-width divider-menu-h"></li>
-                                <div class="mdl-list__item mdl-list__item--two-line">
-                                    <span class="mdl-list__item-primary-content">
-                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                        <span>6. Nombre instructor</span>
-                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                    </span>
-                                    <a class="mdl-list__item-secondary-action" href="#!"><i
-                                            class="zmdi zmdi-more"></i></a>
-                                </div>
-                                <li class="full-width divider-menu-h"></li>
-                                <div class="mdl-list__item mdl-list__item--two-line">
-                                    <span class="mdl-list__item-primary-content">
-                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                        <span>7. Nombre instructor</span>
+                                        <span>5. Nombre de Administrador</span>
                                         <span class="mdl-list__item-sub-title">Número de Identificación</span>
                                     </span>
                                     <a class="mdl-list__item-secondary-action" href="#!"><i
@@ -333,7 +313,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
