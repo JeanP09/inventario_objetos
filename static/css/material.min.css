@@ -6926,6 +6926,7 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
+    margin-bottom: 20px;
 }
 
 .mdl-grid.mdl-grid--no-spacing {
