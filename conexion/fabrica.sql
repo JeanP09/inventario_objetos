@@ -127,17 +127,6 @@ ALTER TABLE `prestamos`
   ADD KEY `IdProducto` (`IdProducto`);
 
 --
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`IdUsuario`);
-ALTER TABLE `usuarios`
-  ADD `ContrasenaUsuario` varchar(50) 
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
 -- AUTO_INCREMENT de la tabla `devoluciones`
 --
 ALTER TABLE `devoluciones`
