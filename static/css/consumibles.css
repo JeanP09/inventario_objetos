@@ -184,17 +184,17 @@ h1 {
 .search-container {
     display: flex;
     max-width: 400px;
-    margin: 20px auto;
+    margin: auto auto;
 }
 
-.search-container input[type="text"] {
+.search_input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px 0 0 4px;
 }
 
-.search-container button {
+.search_btn {
     padding: 10px 20px;
     background-color: #39a900;
     color: #fff;
@@ -203,9 +203,10 @@ h1 {
     cursor: pointer;
 }
 
-.search-container button:hover {
+.search_btn:hover {
     background-color: #2a7d00;
 }
+
 
 .table-responsive{
 	overflow: auto;
@@ -266,7 +267,7 @@ table {
 }
 
 .filter-btn {
-    padding: 10px;
+    padding: 10px 20px;
     background-color: #39a900;
     color: #fff;
     border: none;

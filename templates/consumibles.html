@@ -63,12 +63,13 @@
 
 
     <div class="search-container">
-        <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search" autocomplete="off">
+        <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container" autocomplete="off">
             <input type="search" name="buscar" class="search_input" placeholder="Buscar...">
             <button type="submit" class="search_btn">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
         </form>
+        
 
 
         <div class="filter-dropdown">
@@ -95,7 +96,7 @@
                             <th class="mdl-data-table__cell--non-numeric">Nombre Producto</th>
                             <th>Código</th>
                             <th>Stock</th>
-                            <th>Descripcion</th>
+                            <th>Descripción</th>
                             <th>Opciones</th>
                         </tr>
                     </thead>

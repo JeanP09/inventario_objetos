@@ -234,7 +234,7 @@ table {
 .search-container {
     display: flex;
     max-width: 400px;
-    margin: 20px auto;
+    margin: auto auto;
 }
 
 .search-container input[type="text"] {
