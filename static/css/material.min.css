@@ -1,10 +1,4 @@
-/**
- * material-design-lite - Material Design Components in CSS, JS and HTML
- * @version v1.1.3
- * @license Apache-2.0
- * @copyright 2015 Google, Inc.
- * @link https://github.com/google/material-design-lite
- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @charset "UTF-8";
 
 html {
@@ -195,7 +189,7 @@ main {
 
 html,
 body {
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px
@@ -217,7 +211,7 @@ h3 small,
 h4 small,
 h5 small,
 h6 small {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     line-height: 1.35;
     letter-spacing: -.02em;
@@ -234,7 +228,7 @@ h1 {
 
 h1,
 h2 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400
 }
 
@@ -255,7 +249,7 @@ h3 {
 
 h3,
 h4 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400
 }
 
@@ -275,7 +269,7 @@ h5 {
 
 h5,
 h6 {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     margin: 24px 0 16px
 }
 
@@ -302,7 +296,7 @@ a {
 }
 
 blockquote {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     position: relative;
     font-size: 24px;
     font-weight: 300;
@@ -351,7 +345,7 @@ ol {
 
 .mdl-typography--display-4,
 .mdl-typography--display-4-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 112px;
     font-weight: 300;
     line-height: 1;
@@ -364,7 +358,7 @@ ol {
 
 .mdl-typography--display-3,
 .mdl-typography--display-3-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 56px;
     font-weight: 400;
     line-height: 1.35;
@@ -377,7 +371,7 @@ ol {
 
 .mdl-typography--display-2,
 .mdl-typography--display-2-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 45px;
     font-weight: 400;
     line-height: 48px
@@ -389,7 +383,7 @@ ol {
 
 .mdl-typography--display-1,
 .mdl-typography--display-1-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 34px;
     font-weight: 400;
     line-height: 40px
@@ -401,7 +395,7 @@ ol {
 
 .mdl-typography--headline,
 .mdl-typography--headline-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
@@ -414,7 +408,7 @@ ol {
 
 .mdl-typography--title,
 .mdl-typography--title-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 20px;
     font-weight: 500;
     line-height: 1;
@@ -427,7 +421,7 @@ ol {
 
 .mdl-typography--subhead,
 .mdl-typography--subhead-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -464,7 +458,7 @@ ol {
 
 .mdl-typography--body-2-force-preferred-font,
 .mdl-typography--body-2-force-preferred-font-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 24px;
@@ -477,7 +471,7 @@ ol {
 
 .mdl-typography--body-1-force-preferred-font,
 .mdl-typography--body-1-force-preferred-font-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
@@ -497,7 +491,7 @@ ol {
 }
 
 .mdl-typography--caption-force-preferred-font {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif
+    font-family: 'Work Sans', sans-serif;
 }
 
 .mdl-typography--caption-color-contrast,
@@ -511,7 +505,7 @@ ol {
 
 .mdl-typography--caption-force-preferred-font-color-contrast,
 .mdl-typography--menu {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif
+    font-family: 'Work Sans', sans-serif;
 }
 
 .mdl-typography--menu {
@@ -528,7 +522,7 @@ ol {
 .mdl-typography--menu-color-contrast,
 .mdl-typography--button,
 .mdl-typography--button-color-contrast {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 1;
@@ -601,7 +595,7 @@ ol {
 }
 
 .material-icons {
-    font-family: 'Material Icons';
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 24px;
@@ -1097,11 +1091,11 @@ ol {
 }
 
 .mdl-color-text--indigo {
-    color: #3f51b5 !important
+    color: #39a900 !important
 }
 
 .mdl-color--indigo {
-    background-color: #3f51b5 !important
+    background-color: #39a900 !important
 }
 
 .mdl-color-text--indigo-50 {
@@ -1145,11 +1139,11 @@ ol {
 }
 
 .mdl-color-text--indigo-500 {
-    color: #3f51b5 !important
+    color: #39a900 !important
 }
 
 .mdl-color--indigo-500 {
-    background-color: #3f51b5 !important
+    background-color: #39a900 !important
 }
 
 .mdl-color-text--indigo-600 {
@@ -2817,7 +2811,7 @@ ol {
 }
 
 .mdl-color--primary {
-    background-color: #3f51b5 !important
+    background-color: #39a900 !important
 }
 
 .mdl-color--primary-contrast {
@@ -2837,7 +2831,7 @@ ol {
 }
 
 .mdl-color-text--primary {
-    color: #3f51b5 !important
+    color: #39a900 !important
 }
 
 .mdl-color-text--primary-contrast {
@@ -2926,7 +2920,7 @@ ol {
     position: absolute;
     top: -11px;
     right: -24px;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-weight: 600;
     font-size: 12px;
     width: 22px;
@@ -2966,7 +2960,7 @@ ol {
     min-width: 64px;
     padding: 0 16px;
     display: inline-block;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -2999,7 +2993,7 @@ ol {
 }
 
 .mdl-button.mdl-button--colored {
-    color: #3f51b5
+    color: #39a900
 }
 
 .mdl-button.mdl-button--colored:focus:not(:active) {
@@ -3026,20 +3020,20 @@ input.mdl-button[type="submit"] {
 }
 
 .mdl-button--raised.mdl-button--colored {
-    background: #3f51b5;
+    background: #39a900;
     color: #fff
 }
 
 .mdl-button--raised.mdl-button--colored:hover {
-    background-color: #3f51b5
+    background-color: #39a900
 }
 
 .mdl-button--raised.mdl-button--colored:active {
-    background-color: #3f51b5
+    background-color: #39a900
 }
 
 .mdl-button--raised.mdl-button--colored:focus:not(:active) {
-    background-color: #3f51b5
+    background-color: #39a900
 }
 
 .mdl-button--raised.mdl-button--colored .mdl-ripple {
@@ -3170,7 +3164,7 @@ input.mdl-button[type="submit"] {
 }
 
 .mdl-button--primary.mdl-button--primary {
-    color: #3f51b5
+    color: #39a900
 }
 
 .mdl-button--primary.mdl-button--primary .mdl-ripple {
@@ -3180,7 +3174,7 @@ input.mdl-button[type="submit"] {
 .mdl-button--primary.mdl-button--primary.mdl-button--raised,
 .mdl-button--primary.mdl-button--primary.mdl-button--fab {
     color: #fff;
-    background-color: #3f51b5
+    background-color: #39a900
 }
 
 .mdl-button--accent.mdl-button--accent {
@@ -3389,7 +3383,7 @@ input.mdl-button[type="submit"] {
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__box-outline {
-    border: 2px solid #3f51b5
+    border: 2px solid #39a900
 }
 
 fieldset[disabled] .mdl-checkbox .mdl-checkbox__box-outline,
@@ -3435,7 +3429,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__box-outline,
 }
 
 .mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
-    background: #3f51b5 url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICB2aWV3Qm94PSIwIDAgMSAxIgogICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij4KICA8cGF0aAogICAgIGQ9Ik0gMC4wNDAzODA1OSwwLjYyNjc3NjcgMC4xNDY0NDY2MSwwLjUyMDcxMDY4IDAuNDI5Mjg5MzIsMC44MDM1NTMzOSAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IE0gMC4yMTcxNTcyOSwwLjgwMzU1MzM5IDAuODUzNTUzMzksMC4xNjcxNTcyOSAwLjk1OTYxOTQxLDAuMjczMjIzMyAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IgogICAgIGlkPSJyZWN0Mzc4MCIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIiAvPgo8L3N2Zz4K")
+    background: #39a900 url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmVyc2lvbj0iMS4xIgogICB2aWV3Qm94PSIwIDAgMSAxIgogICBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWluWU1pbiBtZWV0Ij4KICA8cGF0aAogICAgIGQ9Ik0gMC4wNDAzODA1OSwwLjYyNjc3NjcgMC4xNDY0NDY2MSwwLjUyMDcxMDY4IDAuNDI5Mjg5MzIsMC44MDM1NTMzOSAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IE0gMC4yMTcxNTcyOSwwLjgwMzU1MzM5IDAuODUzNTUzMzksMC4xNjcxNTcyOSAwLjk1OTYxOTQxLDAuMjczMjIzMyAwLjMyMzIyMzMsMC45MDk2MTk0MSB6IgogICAgIGlkPSJyZWN0Mzc4MCIKICAgICBzdHlsZT0iZmlsbDojZmZmZmZmO2ZpbGwtb3BhY2l0eToxO3N0cm9rZTpub25lIiAvPgo8L3N2Zz4K")
 }
 
 fieldset[disabled] .mdl-checkbox.is-checked .mdl-checkbox__tick-outline,
@@ -3472,7 +3466,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__label,
 }
 
 .mdl-checkbox__ripple-container .mdl-ripple {
-    background: #3f51b5
+    background: #39a900
 }
 
 fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container,
@@ -3571,7 +3565,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 
 .mdl-data-table th.mdl-data-table__header--sorted-ascending:before,
 .mdl-data-table th.mdl-data-table__header--sorted-descending:before {
-    font-family: 'Material Icons';
+    font-family: 'Work Sans', sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1;
@@ -3805,7 +3799,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-mega-footer--heading-checkbox+.mdl-mega-footer__heading:after,
 .mdl-mega-footer__heading-checkbox+.mdl-mega-footer--heading:after,
 .mdl-mega-footer__heading-checkbox+.mdl-mega-footer__heading:after {
-    font-family: 'Material Icons';
+    font-family: 'Work Sans', sans-serif;
     content: '\E5CE'
 }
 
@@ -3824,7 +3818,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-mega-footer--heading-checkbox:checked+.mdl-mega-footer__heading:after,
 .mdl-mega-footer__heading-checkbox:checked+.mdl-mega-footer--heading:after,
 .mdl-mega-footer__heading-checkbox:checked+.mdl-mega-footer__heading:after {
-    font-family: 'Material Icons';
+    font-family: 'Work Sans', sans-serif;
     content: '\E5CF'
 }
 
@@ -4080,7 +4074,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 
 .mdl-icon-toggle.is-checked .mdl-icon-toggle__label {
-    color: #3f51b5
+    color: #39a900
 }
 
 .mdl-icon-toggle.is-disabled .mdl-icon-toggle__label {
@@ -4130,7 +4124,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 
 .mdl-list__item {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: .04em;
@@ -4502,13 +4496,13 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 
 .mdl-progress>.progressbar {
-    background-color: #3f51b5;
+    background-color: #39a900;
     z-index: 1;
     left: 0
 }
 
 .mdl-progress>.bufferbar {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), linear-gradient(to right, #3f51b5, #3f51b5);
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), linear-gradient(to right, #39a900, #39a900);
     z-index: 0;
     left: 0
 }
@@ -4521,7 +4515,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 
     .mdl-progress:not(.mdl-progress--indeterminate):not(.mdl-progress--indeterminate)>.auxbar,
     .mdl-progress:not(.mdl-progress__indeterminate):not(.mdl-progress__indeterminate)>.auxbar {
-        background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), linear-gradient(to right, #3f51b5, #3f51b5);
+        background-image: linear-gradient(to right, rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)), linear-gradient(to right, #39a900, #39a900);
         -webkit-mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=");
         mask: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxzdmcgd2lkdGg9IjEyIiBoZWlnaHQ9IjQiIHZpZXdQb3J0PSIwIDAgMTIgNCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogIDxlbGxpcHNlIGN4PSIyIiBjeT0iMiIgcng9IjIiIHJ5PSIyIj4KICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImN4IiBmcm9tPSIyIiB0bz0iLTEwIiBkdXI9IjAuNnMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIiAvPgogIDwvZWxsaXBzZT4KICA8ZWxsaXBzZSBjeD0iMTQiIGN5PSIyIiByeD0iMiIgcnk9IjIiIGNsYXNzPSJsb2FkZXIiPgogICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iY3giIGZyb209IjE0IiB0bz0iMiIgZHVyPSIwLjZzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSIgLz4KICA8L2VsbGlwc2U+Cjwvc3ZnPgo=")
     }
@@ -4529,7 +4523,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 
 .mdl-progress:not(.mdl-progress--indeterminate)>.auxbar,
 .mdl-progress:not(.mdl-progress__indeterminate)>.auxbar {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)), linear-gradient(to right, #3f51b5, #3f51b5)
+    background-image: linear-gradient(to right, rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)), linear-gradient(to right, #39a900, #39a900)
 }
 
 .mdl-progress.mdl-progress--indeterminate>.bar1,
@@ -4542,7 +4536,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-progress.mdl-progress__indeterminate>.bar1,
 .mdl-progress.mdl-progress--indeterminate>.bar3,
 .mdl-progress.mdl-progress__indeterminate>.bar3 {
-    background-color: #3f51b5;
+    background-color: #39a900;
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
@@ -4688,7 +4682,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 .mdl-layout-title {
     display: block;
     position: relative;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 20px;
     line-height: 1;
     letter-spacing: .02em;
@@ -4824,7 +4818,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     cursor: pointer;
     font-size: 26px;
     line-height: 50px;
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Work Sans', sans-serif;
     margin: 10px 12px;
     top: 0;
     left: 0;
@@ -4887,7 +4881,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     min-height: 64px;
     max-height: 1000px;
     z-index: 3;
-    background-color: #3f51b5;
+    background-color: #39a900;
     color: #fff;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
     transition-duration: .2s;
@@ -5154,7 +5148,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    background-color: #3f51b5;
+    background-color: #39a900;
     overflow-y: hidden;
     overflow-x: scroll
 }
@@ -5223,7 +5217,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     width: 56px;
     z-index: 4;
     text-align: center;
-    background-color: #3f51b5;
+    background-color: #39a900;
     color: transparent;
     cursor: pointer;
     -webkit-user-select: none;
@@ -5401,7 +5395,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 }
 
 .mdl-radio.is-checked .mdl-radio__outer-circle {
-    border: 2px solid #3f51b5
+    border: 2px solid #39a900
 }
 
 .mdl-radio__outer-circle fieldset[disabled] .mdl-radio,
@@ -5427,7 +5421,7 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
     -webkit-transform: scale3d(0, 0, 0);
     transform: scale3d(0, 0, 0);
     border-radius: 50%;
-    background: #3f51b5
+    background: #39a900
 }
 
 .mdl-radio.is-checked .mdl-radio__inner-circle {
@@ -5470,7 +5464,7 @@ fieldset[disabled] .mdl-radio .mdl-radio__label,
 }
 
 .mdl-radio__ripple-container .mdl-ripple {
-    background: #3f51b5
+    background: #39a900
 }
 
 fieldset[disabled] .mdl-radio .mdl-radio__ripple-container,
@@ -5507,7 +5501,7 @@ _:-ms-input-placeholder,
     user-select: none;
     outline: 0;
     padding: 0;
-    color: #3f51b5;
+    color: #39a900;
     -webkit-align-self: center;
     -ms-flex-item-align: center;
     align-self: center;
@@ -5542,7 +5536,7 @@ _:-ms-input-placeholder,
 
 .mdl-slider.is-upgraded::-ms-fill-lower {
     padding: 0;
-    background: linear-gradient(to right, transparent, transparent 16px, #3f51b5 16px, #3f51b5 0)
+    background: linear-gradient(to right, transparent, transparent 16px, #39a900 16px, #39a900 0)
 }
 
 .mdl-slider.is-upgraded::-ms-fill-upper {
@@ -5556,7 +5550,7 @@ _:-ms-input-placeholder,
     height: 12px;
     box-sizing: border-box;
     border-radius: 50%;
-    background: #3f51b5;
+    background: #39a900;
     border: none;
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), border .18s cubic-bezier(.4, 0, .2, 1), box-shadow .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1);
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), border .18s cubic-bezier(.4, 0, .2, 1), box-shadow .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1), -webkit-transform .18s cubic-bezier(.4, 0, .2, 1)
@@ -5569,7 +5563,7 @@ _:-ms-input-placeholder,
     box-sizing: border-box;
     border-radius: 50%;
     background-image: none;
-    background: #3f51b5;
+    background: #39a900;
     border: none
 }
 
@@ -5583,14 +5577,14 @@ _:-ms-input-placeholder,
 
 .mdl-slider.is-upgraded:active::-webkit-slider-thumb {
     background-image: none;
-    background: #3f51b5;
+    background: #39a900;
     -webkit-transform: scale(1.5);
     transform: scale(1.5)
 }
 
 .mdl-slider.is-upgraded:active::-moz-range-thumb {
     background-image: none;
-    background: #3f51b5;
+    background: #39a900;
     transform: scale(1.5)
 }
 
@@ -5599,19 +5593,19 @@ _:-ms-input-placeholder,
     height: 32px;
     border: none;
     border-radius: 50%;
-    background: #3f51b5;
+    background: #39a900;
     transform: scale(.375);
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1);
     transition: transform .18s cubic-bezier(.4, 0, .2, 1), background .28s cubic-bezier(.4, 0, .2, 1), -webkit-transform .18s cubic-bezier(.4, 0, .2, 1)
 }
 
 .mdl-slider.is-upgraded:focus:not(:active)::-ms-thumb {
-    background: radial-gradient(circle closest-side, #3f51b5 0%, #3f51b5 37.5%, rgba(63, 81, 181, .26)37.5%, rgba(63, 81, 181, .26)100%);
+    background: radial-gradient(circle closest-side, #39a900 0%, #39a900 37.5%, rgba(63, 81, 181, .26)37.5%, rgba(63, 81, 181, .26)100%);
     transform: scale(1)
 }
 
 .mdl-slider.is-upgraded:active::-ms-thumb {
-    background: #3f51b5;
+    background: #39a900;
     transform: scale(.5625)
 }
 
@@ -5791,7 +5785,7 @@ _:-ms-input-placeholder,
 }
 
 .mdl-slider__background-lower {
-    background: #3f51b5
+    background: #39a900
 }
 
 .mdl-slider__background-lower,
@@ -5823,7 +5817,7 @@ _:-ms-input-placeholder,
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     will-change: transform;
     -webkit-transform: translate(0, 80px);
     transform: translate(0, 80px);
@@ -5879,7 +5873,7 @@ _:-ms-input-placeholder,
     color: #ff4081;
     float: right;
     padding: 14px 24px 14px 12px;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 14px;
     font-weight: 500;
     text-transform: uppercase;
@@ -5948,7 +5942,7 @@ _:-ms-input-placeholder,
 }
 
 .mdl-spinner--single-color .mdl-spinner__layer-1 {
-    border-color: #3f51b5
+    border-color: #39a900
 }
 
 .mdl-spinner.is-active .mdl-spinner__layer-1 {
@@ -5961,7 +5955,7 @@ _:-ms-input-placeholder,
 }
 
 .mdl-spinner--single-color .mdl-spinner__layer-2 {
-    border-color: #3f51b5
+    border-color: #39a900
 }
 
 .mdl-spinner.is-active .mdl-spinner__layer-2 {
@@ -5974,7 +5968,7 @@ _:-ms-input-placeholder,
 }
 
 .mdl-spinner--single-color .mdl-spinner__layer-3 {
-    border-color: #3f51b5
+    border-color: #39a900
 }
 
 .mdl-spinner.is-active .mdl-spinner__layer-3 {
@@ -5987,7 +5981,7 @@ _:-ms-input-placeholder,
 }
 
 .mdl-spinner--single-color .mdl-spinner__layer-4 {
-    border-color: #3f51b5
+    border-color: #39a900
 }
 
 .mdl-spinner.is-active .mdl-spinner__layer-4 {
@@ -6431,7 +6425,7 @@ _:-ms-input-placeholder,
 }
 
 .mdl-switch.is-checked .mdl-switch__thumb {
-    background: #3f51b5;
+    background: #39a900;
     left: 16px;
     box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .14), 0 3px 3px -2px rgba(0, 0, 0, .2), 0 1px 8px 0 rgba(0, 0, 0, .12)
 }
@@ -6499,7 +6493,7 @@ _:-ms-input-placeholder,
 }
 
 .mdl-switch__ripple-container .mdl-ripple {
-    background: #3f51b5
+    background: #39a900
 }
 
 .mdl-switch__ripple-container fieldset[disabled] .mdl-switch,
@@ -6573,7 +6567,7 @@ fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
     bottom: 0;
     left: 0;
     position: absolute;
-    background: #3f51b5;
+    background: #39a900;
     -webkit-animation: border-expand .2s cubic-bezier(.4, 0, .4, 1).01s alternate forwards;
     animation: border-expand .2s cubic-bezier(.4, 0, .4, 1).01s alternate forwards;
     transition: all 1s cubic-bezier(.4, 0, 1, 1)
@@ -6591,7 +6585,7 @@ fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
 }
 
 .mdl-tabs__tab .mdl-tabs__ripple-container .mdl-ripple {
-    background: #3f51b5
+    background: #39a900
 }
 
 .mdl-tabs__panel {
@@ -6662,16 +6656,16 @@ fieldset[disabled] .mdl-switch .mdl-switch__ripple-container .mdl-ripple,
 
 .mdl-textfield__input {
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, .12);
+    border-bottom: 1px solid rgb(0 0 0 / 40%);
     display: block;
     font-size: 16px;
-    font-family: "Helvetica", "Arial", sans-serif;
+    font-family: 'Work Sans', sans-serif;
     margin: 0;
     padding: 4px 0;
     width: 100%;
     background: 0 0;
     text-align: left;
-    color: inherit
+    color: inherit;
 }
 
 .mdl-textfield__input[type="number"] {
@@ -6706,7 +6700,7 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__input,
 
 .mdl-textfield__label {
     bottom: 0;
-    color: rgba(0, 0, 0, .26);
+    color: rgba(0, 0, 0, .50);
     font-size: 16px;
     left: 0;
     right: 0;
@@ -6742,7 +6736,7 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
 .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
 .mdl-textfield--floating-label.is-dirty .mdl-textfield__label,
 .mdl-textfield--floating-label.has-placeholder .mdl-textfield__label {
-    color: #3f51b5;
+    color: #39a900;
     font-size: 12px;
     top: 4px;
     visibility: visible
@@ -6760,7 +6754,7 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
 }
 
 .mdl-textfield__label:after {
-    background-color: #3f51b5;
+    background-color: #39a900;
     bottom: 20px;
     content: '';
     height: 2px;
@@ -6916,7 +6910,7 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
 }
 
 .mdl-grid {
-    display: -webkit-flex;
+        display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-flow: row wrap;

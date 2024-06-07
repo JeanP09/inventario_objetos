@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
-    <link rel="stylesheet" href="/static/css/consumibles.css">
+    <link rel="stylesheet" href="/static/css/objetos.css">
     <link rel="stylesheet" href="/static/css/material.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
     <title>Inventario de Objetos - Inventario de Objetos</title>
 </head>
 
@@ -20,22 +21,21 @@
         <ul class="opcionesMenu">
             <!-- Logo -->
             <!-- <li><a href="/#home" class="logo">
-                    <img src="/static/img/facebook.png">
-                </a></li> -->
+                <img src="/static/img/facebook.png">
+            </a></li> -->
 
             <li><a href="/templates/homepage.html"><i class="fas fa-home"></i> Inicio</a></li>
             <li><a href="/templates/quienes_somos.html"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
             <li><a href="/templates/sobre_nosotros.html"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
             <li><a href="/templates/login.html"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <div class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </ul>
+        
     </div>
-
 
     <!-- Menú Lateral -->
-
-    <div class="menu-btn" id="menu-btn">
-        <i class="fas fa-bars"></i>
-    </div>
     <div class="sidebar" id="sidebar">
         <div class="header">
             <img src="/static/img/" alt="">
@@ -45,12 +45,14 @@
             </div>
         </div>
         <ul>
+            <li><a href="/templates/inventario.html">Inventario</a></li>
             <li><a href="/templates/objetos.html">Objetos</a></li>
             <li><a href="/templates/prestamos.html">Préstamos</a></li>
             <li><a href="/templates/reportes.html">Reportes</a></li>
             <li><a href="/templates/instructores.html">Instructores</a></li>
         </ul>
     </div>
+
 
 
     <!-- Contenido -->
@@ -63,13 +65,14 @@
 
 
     <div class="search-container">
-        <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container" autocomplete="off">
+        <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container"
+            autocomplete="off">
             <input type="search" name="buscar" class="search_input" placeholder="Buscar...">
             <button type="submit" class="search_btn">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
         </form>
-        
+
 
 
         <div class="filter-dropdown">
@@ -86,79 +89,178 @@
         </div>
     </div>
 
-    <div class="full-width divider-menu-h"></div>
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-            <div class="table-responsive">
-                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
-                    <thead>
-                        <tr>
-                            <th class="mdl-data-table__cell--non-numeric">Nombre Producto</th>
-                            <th>Código</th>
-                            <th>Stock</th>
-                            <th>Tipo Objeto</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Consumibles</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Formación</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Consumibles</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Formación</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Consumibles</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Formación</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Consumibles</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                    </tbody>
-                </table>
+    <!-- Tabla Objetos Registro y Lista -->
+
+    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+            <a href="#tabNewProduct" class="mdl-tabs__tab is-active">Nuevo</a>
+            <a href="#tabListProducts" class="mdl-tabs__tab">Lista</a>
+        </div>
+        <div class="mdl-tabs__panel is-active" id="tabNewProduct">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="full-width panel mdl-shadow--2dp">
+                        <div class="full-width panel-tittle bg-primary text-center tittles">
+                            Nuevo Producto
+                        </div>
+                        <div class="full-width panel-content">
+                            <form>
+                                <div class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                            &nbsp; INFORMACIÓN BÁSICA</legend><br>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number"
+                                                pattern="-?[0-9- ]*(\.[0-9]+)?" id="BarCode">
+                                            <label class="mdl-textfield__label" for="BarCode">Código de Barra</label>
+                                            <span class="mdl-textfield__error">Código de barra inválido</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text"
+                                                pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct">
+                                            <label class="mdl-textfield__label" for="NameProduct">Nombre
+                                                Producto</label>
+                                            <span class="mdl-textfield__error">Nombre inválido</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="number"
+                                                pattern="-?[0-9]*(\.[0-9]+)?" id="StrockProduct">
+                                            <label class="mdl-textfield__label" for="StrockProduct">Cantidad</label>
+                                            <span class="mdl-textfield__error">Número inválido</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                            &nbsp; TIPO PRODUCTO</legend><br>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <div class="mdl-textfield mdl-js-textfield">
+                                            <select class="mdl-textfield__input">
+                                                <option value="" disabled="" selected="">Seleccionar Tipo</option>
+                                                <option value="">Formación</option>
+                                                <option value="">Consumibles</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                            &nbsp; DESCRIPCIÓN</legend><br>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text"
+                                                pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="DescripcionProducto">
+                                            <label class="mdl-textfield__label" for="DescripcionProducto">Descripción
+                                                Producto</label>
+                                            <span class="mdl-textfield__error">Nombre inválido</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="markProduct">
+                                            <label class="mdl-textfield__label" for="markProduct">Obervaciones
+                                                Producto</label>
+                                            <span class="mdl-textfield__error">Obervaciones Inválidas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-center">
+                                    <button
+                                        class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary"
+                                        id="btn-addProduct">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                <div class="mdl-tooltip" for="btn-addProduct">Agregar Objeto</div>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-tabs__panel" id="tabListProducts">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                            <label class="mdl-button mdl-js-button mdl-button--icon" for="searchProduct">
+                                <i class="zmdi zmdi-search"></i>
+                            </label>
+                            <div class="mdl-textfield__expandable-holder">
+                                <input class="mdl-textfield__input" type="text" id="searchProduct">
+                                <label class="mdl-textfield__label"></label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="full-width text-center" style="padding: 30px 0;">
+                        <div class="mdl-card mdl-shadow--2dp full-width product-card">
+                            <div class="mdl-card__title">
+                                <img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <small>Stock</small><br>
+                                <small>Category</small>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                Product name
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mdl-card mdl-shadow--2dp full-width product-card">
+                            <div class="mdl-card__title">
+                                <img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <small>Stock</small><br>
+                                <small>Category</small>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                Product name
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mdl-card mdl-shadow--2dp full-width product-card">
+                            <div class="mdl-card__title">
+                                <img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <small>Stock</small><br>
+                                <small>Category</small>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                Product name
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mdl-card mdl-shadow--2dp full-width product-card">
+                            <div class="mdl-card__title">
+                                <img src="assets/img/fontLogin.jpg" alt="product" class="img-responsive">
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <small>Stock</small><br>
+                                <small>Category</small>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                Product name
+                                <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+                                    <i class="fa-solid fa-ellipsis"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -188,6 +290,8 @@
 
     <script src="/static/javascripts/menu_lateral.js"></script>
     <script src="/static/javascripts/filtrar.js"></script>
+    <script src="/static/javascripts/main.js"></script>
+    <script src="/static/javascripts/material.min.js"></script>
 </body>
 
 </html>
