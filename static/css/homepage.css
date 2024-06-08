@@ -111,6 +111,51 @@ li a {
     transform: translateY(-7px) scale(0.9);
 }
 
+
+
+.contenedor-botones {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-botones > div {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.boton-cuadrado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: #39a900;
+    transition: all .50s ease;
+    color: #fff;
+}
+
+.boton-cuadrado:hover {
+    transform: translateY(-7px) scale(0.9);
+}
+
+.boton-cuadrado i {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.boton-cuadrado span {
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+
 /* Footer */
 
 footer {

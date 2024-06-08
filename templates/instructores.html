@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
     <link rel="stylesheet" href="/static/css/instructores.css">
+    <link rel="stylesheet" href="/static/css/material.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
     <title>Instructores - Inventario de Objetos</title>
 </head>
 
@@ -17,22 +21,21 @@
         <ul class="opcionesMenu">
             <!-- Logo -->
             <!-- <li><a href="/#home" class="logo">
-                    <img src="/static/img/facebook.png">
-                </a></li> -->
+                <img src="/static/img/facebook.png">
+            </a></li> -->
 
-            <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="/quienes_somos"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
-            <li><a href="/sobre_nosotros"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
-            <li><a href="/templates/logout.html"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <li><a href="/templates/homepage.html"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="/templates/quienes_somos.html"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
+            <li><a href="/templates/sobre_nosotros.html"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
+            <li><a href="/templates/login.html"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <div class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
         </ul>
-    </div>
 
+    </div>
 
     <!-- Menú Lateral -->
-
-    <div class="menu-btn" id="menu-btn">
-        <i class="fas fa-bars"></i>
-    </div>
     <div class="sidebar" id="sidebar">
         <div class="header">
             <img src="/static/img/" alt="">
@@ -42,28 +45,299 @@
             </div>
         </div>
         <ul>
+            <li><a href="/templates/inventario.html">Inventario</a></li>
             <li><a href="/templates/objetos.html">Objetos</a></li>
             <li><a href="/templates/prestamos.html">Préstamos</a></li>
             <li><a href="/templates/reportes.html">Reportes</a></li>
-            <li><a href="/templates/instructores.html">Instructores</a></li>
+            <li><a href="/templates/usuarios.html">Usuarios</a></li>
         </ul>
     </div>
 
 
+
     <!-- Contenido -->
-    <h1>Elija una categoría deseada de instructores:</h1>
-    <div class="container">
 
-        <a href="/templates/inventario.html" class="round-button">
-            <i class="fas fa-plus-circle"></i>
-            <span>Registrar</span>
-        </a>
-        <a href="/templates/prestamos.html" class="round-button">
-            <i class="fas fa-search"></i>
-            <span>Consultar</span>
-        </a>
+    <a href="/objetos" class="regresar">
+        <i class="fas fa-arrow-left"></i> Regresar
+    </a>
+
+    <h1>Instructores</h1>
+
+
+    <section class="full-width header-well">
+        <div class="full-width header-well-icon">
+            <i class="fa-solid fa-chalkboard-user"></i>
+        </div>
+        <div class="full-width header-well-text">
+            <p class="text-condensedLight">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde aut nulla accusantium minus corporis
+                accusamus fuga harum natus molestias necessitatibus.
+            </p>
+        </div>
+    </section>
+    <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+            <a href="#tabNewClient" class="mdl-tabs__tab is-active">Nuevo</a>
+            <a href="#tabListClient" class="mdl-tabs__tab">Lista</a>
+        </div>
+        <div class="mdl-tabs__panel is-active" id="tabNewClient">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                    <div class="full-width panel mdl-shadow--2dp">
+                        <div class="full-width panel-tittle bg-primary text-center tittles">
+                            Nuevo Instructor
+                        </div>
+                        <div class="full-width panel-content">
+                            <form>
+                                <div class="mdl-grid">
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                            &nbsp; DATOS INSTRUCTOR</legend><br>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <select class="mdl-textfield__input" id="identificationType">
+                                                <option value="" disabled="" selected="">Seleccionar Tipo de Identificación</option>
+                                                <option value="cedula">Cédula de Ciudadanía</option>
+                                                <option value="tarjeta">Tarjeta de Identidad</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="identification"
+                                                pattern="[a-zA-Z0-9]{5,15}">
+                                            <label class="mdl-textfield__label" for="identification">Número de
+                                                Identificación</label>
+                                            <span class="mdl-textfield__error">Número de Identificación Inválido (Debe
+                                                tener entre 5 y 15 caracteres alfanuméricos)</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="name"
+                                                pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s'-]{2,50}">
+                                            <label class="mdl-textfield__label" for="name">Nombre</label>
+                                            <span class="mdl-textfield__error">Nombre Inválido (Debe tener entre 2 y 50
+                                                caracteres)</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="lastname"
+                                                pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s'-]{2,50}">
+                                            <label class="mdl-textfield__label" for="lastname">Apellido</label>
+                                            <span class="mdl-textfield__error">Apellido Inválido (Debe tener entre 2 y
+                                                50 caracteres)</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="tel" id="phone"
+                                                pattern="[0-9]{1,11}">
+                                            <label class="mdl-textfield__label" for="phone">Número de Celular</label>
+                                            <span class="mdl-textfield__error">Número de Celular Inválido (Debe tener
+                                                entre 1 y 11 dígitos)</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="email" id="email"
+                                                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                            <label class="mdl-textfield__label" for="email">Correo Electrónico</label>
+                                            <span class="mdl-textfield__error">Correo Electrónico Inválido</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                            &nbsp; DETALLES DE CUENTA</legend><br>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="text" id="username"
+                                                pattern="[a-zA-Z0-9_]{3,}">
+                                            <label class="mdl-textfield__label" for="username">Nombre de Usuario</label>
+                                            <span class="mdl-textfield__error">Nombre de Usuario Inválido (Debe contener
+                                                al menos 3 caracteres y puede incluir letras, números y guiones
+                                                bajos)</span>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                            <input class="mdl-textfield__input" type="password" id="passwordAdmin"
+                                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
+                                            <label class="mdl-textfield__label" for="passwordAdmin">Contraseña</label>
+                                            <span class="mdl-textfield__error">Contraseña Inválida (Debe contener al
+                                                menos 8 caracteres, una letra mayúscula, una letra minúscula, un dígito
+                                                y un carácter especial)</span>
+                                            <br>
+                                        </div>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col">
+                                        <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                            &nbsp; ESCOGER AVATAR</legend><br>
+                                    </div>
+                                    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+                                        <div class="mdl-grid">
+                                            <div
+                                                class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+                                                    for="option-1">
+                                                    <input type="radio" id="option-1" class="mdl-radio__button"
+                                                        name="options" value="avatar-male.png">
+                                                    <img src="/static/img/avatar-male.png" alt="avatar"
+                                                        style="height: 45px; width=" 45px;" ">
+                                                    <span class=" mdl-radio__label">Avatar 1</span>
+                                                </label>
+                                            </div>
+                                            <div
+                                                class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+                                                    for="option-2">
+                                                    <input type="radio" id="option-2" class="mdl-radio__button"
+                                                        name="options" value="avatar-female.png">
+                                                    <img src="/static/img/avatar-female.png" alt="avatar"
+                                                        style="height: 45px; width=" 45px;" ">
+                                                    <span class=" mdl-radio__label">Avatar 2</span>
+                                                </label>
+                                            </div>
+                                            <div
+                                                class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+                                                    for="option-3">
+                                                    <input type="radio" id="option-3" class="mdl-radio__button"
+                                                        name="options" value="avatar-male2.png">
+                                                    <img src="/static/img/avatar-male2.png" alt="avatar"
+                                                        style="height: 45px; width=" 45px;" ">
+                                                    <span class=" mdl-radio__label">Avatar 3</span>
+                                                </label>
+                                            </div>
+                                            <div
+                                                class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+                                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+                                                    for="option-4">
+                                                    <input type="radio" id="option-4" class="mdl-radio__button"
+                                                        name="options" value="avatar-female2.png">
+                                                    <img src="/static/img/avatar-female2.png" alt="avatar"
+                                                        style="height: 45px; width=" 45px;" ">
+                                                    <span class=" mdl-radio__label">Avatar 4</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-center">
+                                    <button
+                                        class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary"
+                                        id="btn-addAdmin">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                <div class="mdl-tooltip" for="btn-addAdmin">Agregar Instructor</div>
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mdl-tabs__panel" id="tabListClient">
+            <div class="mdl-grid">
+                <div
+                    class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+                    <div class="full-width panel mdl-shadow--2dp">
+                        <div class="full-width panel-tittle bg-success text-center tittles">
+                            Lista Instructores
+                        </div>
+                        <div class="full-width panel-content">
+                            <form action="#">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+                                    <label class="mdl-button mdl-js-button mdl-button--icon" for="searchClient">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </label>
+                                    <div class="mdl-textfield__expandable-holder">
+                                        <input class="mdl-textfield__input" type="text" id="searchClient">
+                                        <label class="mdl-textfield__label"></label>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="mdl-list">
+                                <div class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                        <span>1. Nombre instructor</span>
+                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
+                                    </span>
+                                    <a class="mdl-list__item-secondary-action" href="#!"><i
+                                            class="zmdi zmdi-more"></i></a>
+                                </div>
+                                <li class="full-width divider-menu-h"></li>
+                                <div class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                        <span>2. Nombre instructor</span>
+                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
+                                    </span>
+                                    <a class="mdl-list__item-secondary-action" href="#!"><i
+                                            class="zmdi zmdi-more"></i></a>
+                                </div>
+                                <li class="full-width divider-menu-h"></li>
+                                <div class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                        <span>3. Nombre instructor</span>
+                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
+                                    </span>
+                                    <a class="mdl-list__item-secondary-action" href="#!"><i
+                                            class="zmdi zmdi-more"></i></a>
+                                </div>
+                                <li class="full-width divider-menu-h"></li>
+                                <div class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                        <span>4. Nombre instructor</span>
+                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
+                                    </span>
+                                    <a class="mdl-list__item-secondary-action" href="#!"><i
+                                            class="zmdi zmdi-more"></i></a>
+                                </div>
+                                <li class="full-width divider-menu-h"></li>
+                                <div class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                        <span>5. Nombre instructor</span>
+                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
+                                    </span>
+                                    <a class="mdl-list__item-secondary-action" href="#!"><i
+                                            class="zmdi zmdi-more"></i></a>
+                                </div>
+                                <li class="full-width divider-menu-h"></li>
+                                <div class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                        <span>6. Nombre instructor</span>
+                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
+                                    </span>
+                                    <a class="mdl-list__item-secondary-action" href="#!"><i
+                                            class="zmdi zmdi-more"></i></a>
+                                </div>
+                                <li class="full-width divider-menu-h"></li>
+                                <div class="mdl-list__item mdl-list__item--two-line">
+                                    <span class="mdl-list__item-primary-content">
+                                        <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
+                                        <span>7. Nombre instructor</span>
+                                        <span class="mdl-list__item-sub-title">Número de Identificación</span>
+                                    </span>
+                                    <a class="mdl-list__item-secondary-action" href="#!"><i
+                                            class="zmdi zmdi-more"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
-
 
     <!-- Footer -->
 
@@ -71,11 +345,16 @@
         <h3>www.sena.edu.co</h3>
         <nav>
             <ul>
-                <li><a href="https://www.instagram.com/senacomunica/"><img src="/static/img/instagram.png" alt="instagram_icon"></a></li>
-                <li><a href="https://www.facebook.com/SENA/"><img src="/static/img/facebook.png" alt="facebook_icon"></a></li>
-                <li><a href="https://twitter.com/SENAComunica"><img src="/static/img/gorjeo.png" alt="twitter_icon"></a></li>
-                <li><a href="https://www.youtube.com/@SENAComunica"><img src="/static/img/youtube.png" alt="youtube_icon"></a></li>
-                <li><a href="https://linkedin.com/school/servicio-nacional-de-aprendizaje-sena-/"><img src="/static/img/linkedin.png" alt="linkedin_icon"></a></li>
+                <li><a href="https://www.instagram.com/senacomunica/"><img src="/static/img/instagram.png"
+                            alt="instagram_icon"></a></li>
+                <li><a href="https://www.facebook.com/SENA/"><img src="/static/img/facebook.png"
+                            alt="facebook_icon"></a></li>
+                <li><a href="https://twitter.com/SENAComunica"><img src="/static/img/gorjeo.png" alt="twitter_icon"></a>
+                </li>
+                <li><a href="https://www.youtube.com/@SENAComunica"><img src="/static/img/youtube.png"
+                            alt="youtube_icon"></a></li>
+                <li><a href="https://linkedin.com/school/servicio-nacional-de-aprendizaje-sena-/"><img
+                            src="/static/img/linkedin.png" alt="linkedin_icon"></a></li>
             </ul>
             <p>@SENAComunica</p>
         </nav>
@@ -84,6 +363,9 @@
     </footer>
 
     <script src="/static/javascripts/menu_lateral.js"></script>
+    <script src="/static/javascripts/filtrar.js"></script>
+    <script src="/static/javascripts/main.js"></script>
+    <script src="/static/javascripts/material.min.js"></script>
 </body>
 
 </html>

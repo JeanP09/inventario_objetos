@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+<!-- Contenido -->
+
+<div class="menu-btn" id="menu-btn">
+    <i class="fas fa-bars"></i>
+</div>
+<div class="sidebar" id="sidebar">
+    <div class="header">
+        <img src="/static/img/" alt="">
+        <div class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+    <ul>
+        <li><a href="/templates/inventario.html">Inventario</a></li>
+        <li><a href="/templates/objetos.html">Objetos</a></li>
+        <li><a href="/templates/prestamos.html">Préstamos</a></li>
+        <li><a href="/templates/reportes.html">Reportes</a></li>
+        <li><a href="/templates/usuarios.html">Usuarios</a></li>
+    </ul>
+</div>
+
+<h1>Elija una categoría deseada de usuarios:</h1>
+<div class="container">
+
+    <a href="/templates/administradores.html" class="round-button">
+        <i class="fa-solid fa-user-tie" style="color: white;"></i>
+        <span style="color: white;">Administradores</span>
+    </a>
+    <a href="/templates/instructores.html" class="round-button">
+        <i class="fa-solid fa-chalkboard-user" style="color: white;"></i>
+        <span style="color: white;">Instructores</span>
+    </a>
+</div>
+<script src="/static/javascripts/menu_lateral.js"></script>
+{% endblock %}
