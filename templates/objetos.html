@@ -1,66 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="/static/js/jquery-1.11.2.min.js"><\/script>')</script>
     <link rel="stylesheet" href="/static/css/consumibles.css">
     <link rel="stylesheet" href="/static/css/material.min.css">
     <title>Inventario de Objetos - Inventario de Objetos</title>
 </head>
-
 <body>
 
     <!-- Barra de Menú -->
     <div class="navbar">
         <ul class="opcionesMenu">
-            <!-- Logo -->
-            <!-- <li><a href="/#home" class="logo">
-                    <img src="/static/img/facebook.png">
-                </a></li> -->
-
-            <li><a href="/templates/homepage.html"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="/templates/quienes_somos.html"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
-            <li><a href="/templates/sobre_nosotros.html"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
-            <li><a href="/templates/login.html"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="/quienes_somos"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
+            <li><a href="/sobre_nosotros"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
+            <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
         </ul>
     </div>
 
-
     <!-- Menú Lateral -->
-
     <div class="menu-btn" id="menu-btn">
         <i class="fas fa-bars"></i>
     </div>
     <div class="sidebar" id="sidebar">
         <div class="header">
-            <img src="/static/img/" alt="">
+            <img src="/static/img/logo.png" alt="Logo">
             <h2>SENA</h2>
             <div class="close-btn" id="close-btn">
                 <i class="fas fa-times"></i>
             </div>
         </div>
         <ul>
-            <li><a href="/templates/objetos.html">Objetos</a></li>
-            <li><a href="/templates/prestamos.html">Préstamos</a></li>
-            <li><a href="/templates/reportes.html">Reportes</a></li>
-            <li><a href="/templates/instructores.html">Instructores</a></li>
+            <li><a href="/objetos">Objetos</a></li>
+            <li><a href="/prestamos">Préstamos</a></li>
+            <li><a href="/reportes">Reportes</a></li>
+            <li><a href="/instructores">Instructores</a></li>
         </ul>
     </div>
 
-
     <!-- Contenido -->
-
     <a href="/objetos" class="regresar">
         <i class="fas fa-arrow-left"></i> Regresar
     </a>
 
     <h1>Inventario de Objetos</h1>
-
 
     <div class="search-container">
         <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container" autocomplete="off">
@@ -69,8 +56,6 @@
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
         </form>
-        
-
 
         <div class="filter-dropdown">
             <button class="filter-btn">
@@ -90,6 +75,7 @@
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
             <div class="table-responsive">
+                {% if objetos %}
                 <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
                     <thead>
                         <tr>
@@ -101,93 +87,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for mostrar in objetos %}
                         <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Consumibles</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
+                            <td class="mdl-data-table__cell--non-numeric">{{ mostrar.NombreProducto }}</td>
+                            <td>{{ mostrar.IdProductoGeneral }}</td>
+                            <td>{{ mostrar.Cantidad }}</td>
+                            <td>{{ mostrar.TipoObjeto }}</td>
+                            <td>
+                                <a href="/editar_objeto/{{ mostrar.IdProductoGeneral }}"><i class="fas fa-edit"></i> Editar</a>
+                                <a href="/eliminar_objeto/{{ mostrar.IdProductoGeneral }}"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                            </td>
                         </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Formación</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Consumibles</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Formación</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Consumibles</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Formación</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                            <td>Product Code</td>
-                            <td>7</td>
-                            <td>Consumibles</td>
-                            <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                        class="fa-solid fa-ellipsis"></i></button></td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
+                {% else %}
+                <p>No hay objetos para mostrar.</p>
+                {% endif %}
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-
-    <footer>
-        <h3>www.sena.edu.co</h3>
-        <nav>
-            <ul>
-                <li><a href="https://www.instagram.com/senacomunica/"><img src="/static/img/instagram.png"
-                            alt="instagram_icon"></a></li>
-                <li><a href="https://www.facebook.com/SENA/"><img src="/static/img/facebook.png"
-                            alt="facebook_icon"></a></li>
-                <li><a href="https://twitter.com/SENAComunica"><img src="/static/img/gorjeo.png" alt="twitter_icon"></a>
-                </li>
-                <li><a href="https://www.youtube.com/@SENAComunica"><img src="/static/img/youtube.png"
-                            alt="youtube_icon"></a></li>
-                <li><a href="https://linkedin.com/school/servicio-nacional-de-aprendizaje-sena-/"><img
-                            src="/static/img/linkedin.png" alt="linkedin_icon"></a></li>
-            </ul>
-            <p>@SENAComunica</p>
-        </nav>
-        <br>
-        <p>&copy; 2024 Servicio Nacional de Aprendizaje - SENA</p>
-    </footer>
-
-    <script src="/static/javascripts/menu_lateral.js"></script>
-    <script src="/static/javascripts/filtrar.js"></script>
 </body>
-
 </html>

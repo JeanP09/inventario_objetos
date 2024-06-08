@@ -1,12 +1,7 @@
-# funciones.py
-from flask import Flask, session, request, render_template, redirect, Response, url_for, flash
-from flask import Blueprint
+from flask import session, request, render_template
 from conexion.conexionBD import connectionBD
-from plyer import notification
-blueprint = Blueprint('blueprint',__name__)
 
-
-#FUNCION LOGIN
+# FUNCION LOGIN
 def login(request):
     try:
         connection = connectionBD()
@@ -33,7 +28,7 @@ def login(request):
 
     return False  # Autenticación fallida
 
-#FUNCION BUSCAR OBJETO
+# FUNCION BUSCAR OBJETO
 def BuscarObjeto():
     try:
         if request.method == "POST":
@@ -51,7 +46,18 @@ def BuscarObjeto():
             connection.close()
     return render_template('/')
 
-
-
-        
-    
+# MOSTRAR OBJETOS
+def mostrar_objetos():
+    try:
+        connection = connectionBD()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM productosgenerales")
+        objetos = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return render_template("objetos.html", objetos=objetos)
+    except Exception as e:
+        print(f"Error en la función mostrar_objetos: {e}")
+    finally:
+        if connection.is_connected():
+            connection.close()
