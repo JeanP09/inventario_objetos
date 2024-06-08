@@ -11,10 +11,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /*background-image: url('/static/img/background_img.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;*/
 }
 
 /* Barra de Navegación */
@@ -69,6 +65,7 @@ li a {
 }
 
 /* Contenido Texto */
+
 .contenido {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

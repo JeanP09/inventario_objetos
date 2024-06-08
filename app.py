@@ -28,6 +28,22 @@ def search_route():
     else:
         return render_template('objetos.html')
 
+#ADMINISTRADORES
+
+#EDITAR_OBJETO
+@app.route('/editar_objeto')
+def editar_objeto():
+    return render_template('editar_objeto.html')
+
+#ELIMINAR_OBJETO
+
+#INSTRUCTORES
+
+#INVENTARIO
+@app.route('/inventario')
+def inventario():
+    return render_template('inventario.html')
+
 # REGISTRARME
 @app.route('/register')
 def registrar_usuarios():
@@ -57,6 +73,11 @@ def ob_devolutivos():
 @app.route('/objetos')
 def ob_generales():
     return render_template('objetos.html')
+
+# MOSTRAR OBJETOS
+@app.route('/mostrar_inventario', methods=["GET", "POST"])
+def inventario_objetos():
+    return mostrar_inventario()
 
 # MOSTRAR OBJETOS
 @app.route('/mostrar_objetos', methods=["GET", "POST"])

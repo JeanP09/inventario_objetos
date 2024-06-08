@@ -1,111 +1,167 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/static/js/jquery-1.11.2.min.js"><\/script>')</script>
-    <link rel="stylesheet" href="/static/css/consumibles.css">
-    <link rel="stylesheet" href="/static/css/material.min.css">
-    <title>Inventario de Objetos - Inventario de Objetos</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    <!-- Barra de Menú -->
-    <div class="navbar">
-        <ul class="opcionesMenu">
-            <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="/quienes_somos"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
-            <li><a href="/sobre_nosotros"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
-            <li><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-        </ul>
+{% block title %}Inventario de Objetos - Inventario de Objetos{% endblock %}
+
+{% block content %}
+
+
+<!-- Contenido -->
+
+<a href="/objetos" class="regresar">
+    <i class="fas fa-arrow-left"></i> Regresar
+</a>
+
+<h1>Inventario de Objetos</h1>
+
+
+
+
+<!-- Tabla Objetos Registro y Lista -->
+
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#tabNewProduct" class="mdl-tabs__tab is-active">Nuevo</a>
+        <a href="#tabListProducts" class="mdl-tabs__tab">Lista</a>
     </div>
 
-    <!-- Menú Lateral -->
-    <div class="menu-btn" id="menu-btn">
-        <i class="fas fa-bars"></i>
-    </div>
-    <div class="sidebar" id="sidebar">
-        <div class="header">
-            <img src="/static/img/logo.png" alt="Logo">
-            <h2>SENA</h2>
-            <div class="close-btn" id="close-btn">
-                <i class="fas fa-times"></i>
+    <div class="mdl-tabs__panel is-active" id="tabNewProduct">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+                <div class="full-width panel mdl-shadow--2dp">
+                    <div class="full-width panel-tittle bg-primary text-center tittles">
+                        Nuevo Producto
+                    </div>
+                    <div class="full-width panel-content">
+                        <form>
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--12-col">
+                                    <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                        &nbsp; INFORMACIÓN BÁSICA</legend><br>
+                                </div>
+                                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text"
+                                            pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct">
+                                        <label class="mdl-textfield__label" for="NameProduct">Nombre Producto</label>
+                                        <span class="mdl-textfield__error">Nombre inválido</span>
+                                    </div>
+                                </div>
+                                <div class="mdl-cell mdl-cell--12-col">
+                                    <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                        &nbsp; Descripción Producto</legend><br>
+                                </div>
+                                <div class="mdl-cell mdl-cell--12-col">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text"
+                                            pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="DescripcionProducto">
+                                        <label class="mdl-textfield__label" for="DescripcionProducto">Descripción
+                                            Producto</label>
+                                        <span class="mdl-textfield__error">DescripcionProducto inválido</span>
+                                    </div>
+                                </div>
+                                <div class="mdl-cell mdl-cell--12-col">
+                                    <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                        &nbsp; TIPO PRODUCTO</legend><br>
+                                </div>
+                                <div class="mdl-cell mdl-cell--12-col">
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <select class="mdl-textfield__input">
+                                            <option value="" disabled="" selected="">Seleccionar Tipo</option>
+                                            <option value="">Formación</option>
+                                            <option value="">Consumibles</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?"
+                                            id="StrockProduct">
+                                        <label class="mdl-textfield__label" for="StrockProduct">Cantidad</label>
+                                        <span class="mdl-textfield__error">Número inválido</span>
+                                    </div>
+                                </div>
+                                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="markProduct">
+                                        <label class="mdl-textfield__label" for="markProduct">Obervaciones
+                                            Producto</label>
+                                        <span class="mdl-textfield__error">Obervaciones Inválidas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-center">
+                                <button
+                                    class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary"
+                                    id="btn-addProduct">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            <div class="mdl-tooltip" for="btn-addProduct">Agregar Objeto</div>
+                            </p>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <ul>
-            <li><a href="/objetos">Objetos</a></li>
-            <li><a href="/prestamos">Préstamos</a></li>
-            <li><a href="/reportes">Reportes</a></li>
-            <li><a href="/instructores">Instructores</a></li>
-        </ul>
     </div>
+    <br>
+    <br>
+    <br>
 
-    <!-- Contenido -->
-    <a href="/objetos" class="regresar">
-        <i class="fas fa-arrow-left"></i> Regresar
-    </a>
-
-    <h1>Inventario de Objetos</h1>
-
-    <div class="search-container">
-        <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container" autocomplete="off">
+    <div class="mdl-tabs__panel" id="tabListProducts">
+        <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container"
+            autocomplete="off">
             <input type="search" name="buscar" class="search_input" placeholder="Buscar...">
             <button type="submit" class="search_btn">
                 <i class="fa-solid fa-magnifying-glass"></i> Buscar
             </button>
+
+            <div class="filter-dropdown">
+                <button class="filter-btn">
+                    <i class="fa-solid fa-sliders"></i> Filtrar
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Menor stock</a>
+                    <a href="#">Mayor stock</a>
+                    <a href="#">Ordenar A-Z</a>
+                    <a href="#">Formación</a>
+                    <a href="#">Consumibles</a>
+                </div>
+            </div>
         </form>
 
-        <div class="filter-dropdown">
-            <button class="filter-btn">
-                <i class="fa-solid fa-sliders"></i> Filtrar
-            </button>
-            <div class="dropdown-content">
-                <a href="#">Menor stock</a>
-                <a href="#">Mayor stock</a>
-                <a href="#">Ordenar A-Z</a>
-                <a href="#">Formación</a>
-                <a href="#">Consumibles</a>
+        {% if objetos %}
+        <p style="color: black;">Objetos encontrados: {{ objetos|length }}</p>
+        <div class="mdl-grid">
+            {% for mostrar in objetos %}
+            <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+                <div class="full-width text-center" style="padding: 30px 0;">
+                    <div class="mdl-card mdl-shadow--2dp full-width product-card">
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-card__actions"><span class="nombre_objeto">{{ mostrar.NombreProducto }}</span></div>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <small class="titulo_objeto">Descripción: <span class="resultado">{{ mostrar.DescripcionProducto }}</span></small><br>
+                            <small class="titulo_objeto">Tipo Producto: <span class="resultado">{{ mostrar.TipoProducto }}</span></small><br>
+                            <small class="titulo_objeto">Cantidad: <span class="resultado">{{ mostrar.CantidadProducto }}</span></small><br>
+                            <small class="titulo_objeto">Observaciones: <span class="resultado">{{ mostrar.ObservacionesProducto }}</span></small>
+                            <br>
+                            <br>
+                            <a class="icon_edit" style="color: #39a900; text-decoration: none;" href="/editar_objeto/{{ mostrar.IdProductoGeneral }}">
+                                <i class="fas fa-edit"></i> Editar
+                            </a>
+                            <br>
+                            <a class="icon_delete" style="color: red; text-decoration: none;" href="/eliminar_objeto/{{ mostrar.IdProductoGeneral }}">
+                                <i class="fas fa-trash-alt"></i> Eliminar
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
+        {% else %}
+        <p>No hay objetos para mostrar.</p>
+        {% endif %}
     </div>
-
-    <div class="full-width divider-menu-h"></div>
-    <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
-            <div class="table-responsive">
-                {% if objetos %}
-                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
-                    <thead>
-                        <tr>
-                            <th class="mdl-data-table__cell--non-numeric">Nombre Producto</th>
-                            <th>Código</th>
-                            <th>Stock</th>
-                            <th>Tipo Objeto</th>
-                            <th>Opciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for mostrar in objetos %}
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">{{ mostrar.NombreProducto }}</td>
-                            <td>{{ mostrar.IdProductoGeneral }}</td>
-                            <td>{{ mostrar.Cantidad }}</td>
-                            <td>{{ mostrar.TipoObjeto }}</td>
-                            <td>
-                                <a href="/editar_objeto/{{ mostrar.IdProductoGeneral }}"><i class="fas fa-edit"></i> Editar</a>
-                                <a href="/eliminar_objeto/{{ mostrar.IdProductoGeneral }}"><i class="fas fa-trash-alt"></i> Eliminar</a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-                {% else %}
-                <p>No hay objetos para mostrar.</p>
-                {% endif %}
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+</div>
+{% endblock %}

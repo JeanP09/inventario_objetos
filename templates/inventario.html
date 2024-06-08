@@ -3,14 +3,11 @@
 {% block title %}Página de Inicio{% endblock %}
 
 {% block content %}
-<!-- Contenido -->
-
 <a href="/objetos" class="regresar">
     <i class="fas fa-arrow-left"></i> Regresar
 </a>
 
 <h1>Inventario de Objetos</h1>
-
 
 <div class="search-container">
     <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container" autocomplete="off">
@@ -19,8 +16,6 @@
             <i class="fa-solid fa-magnifying-glass"></i> Buscar
         </button>
     </form>
-    
-
 
     <div class="filter-dropdown">
         <button class="filter-btn">
@@ -40,77 +35,39 @@
 <div class="mdl-grid">
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
         <div class="table-responsive">
+            {% if inventario %}
             <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
                 <thead>
                     <tr>
-                        <th class="mdl-data-table__cell--non-numeric">Nombre Producto</th>
-                        <th>Código</th>
-                        <th>Stock</th>
-                        <th>Tipo Objeto</th>
+                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">ID</th>
+                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Nombre Producto</th>
+                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Stock</th>
+                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Tipo Objeto</th>
+                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Observaciones</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
+                    {% for mostrar in inventario %}
                     <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                        <td>Product Code</td>
-                        <td>7</td>
-                        <td>Consumibles</td>
-                        <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                    class="fa-solid fa-ellipsis"></i></button></td>
+                        <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdProducto }}</td>
+                        <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.NombreProducto }}</td>
+                        <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.CantidadProducto }}</td>
+                        <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.TipoProducto }}</td>
+                        <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.ObservacionesProducto }}</td>
+                        <td>
+                            <a class="icon_edit" href="/editar_objeto/{{ mostrar.IdProductoGeneral }}" style="color: #39a900; text-decoration: none;"><i class="fas fa-edit"></i> Editar</a>
+                            <a class="icon_delete" href="/eliminar_objeto/{{ mostrar.IdProductoGeneral }}" style="color: red; text-decoration: none;"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                        </td>
                     </tr>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                        <td>Product Code</td>
-                        <td>7</td>
-                        <td>Formación</td>
-                        <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                    class="fa-solid fa-ellipsis"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                        <td>Product Code</td>
-                        <td>7</td>
-                        <td>Consumibles</td>
-                        <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                    class="fa-solid fa-ellipsis"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                        <td>Product Code</td>
-                        <td>7</td>
-                        <td>Formación</td>
-                        <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                    class="fa-solid fa-ellipsis"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                        <td>Product Code</td>
-                        <td>7</td>
-                        <td>Consumibles</td>
-                        <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                    class="fa-solid fa-ellipsis"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                        <td>Product Code</td>
-                        <td>7</td>
-                        <td>Formación</td>
-                        <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                    class="fa-solid fa-ellipsis"></i></button></td>
-                    </tr>
-                    <tr>
-                        <td class="mdl-data-table__cell--non-numeric">Product Name</td>
-                        <td>Product Code</td>
-                        <td>7</td>
-                        <td>Consumibles</td>
-                        <td><button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i
-                                    class="fa-solid fa-ellipsis"></i></button></td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
+            {% else %}
+            <p>No hay objetos para mostrar.</p>
+            {% endif %}
         </div>
     </div>
 </div>
-<script src="/static/javascripts/menu_lateral.js"></script>
 {% endblock %}
+

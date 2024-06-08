@@ -7877,3 +7877,20 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
 }
 
 /*# sourceMappingURL=material.min.css.map */
+
+
+.titulo_objeto {
+    font-weight: 500;
+    color: black;
+    font-size: large;
+}
+
+.resultado {
+    font-weight: normal;
+}
+
+.nombre_objeto {
+    font-size: x-large;
+    font-weight: 500;
+    color:black
+}

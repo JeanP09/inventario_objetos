@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}Página de Inicio{% endblock %}
+
+{% block content %}
+
+<a href="/objetos" class="regresar">
+    <i class="fas fa-arrow-left"></i> Regresar
+</a>
+
+<h1>Editar Objetos</h1>
+
+<div class="mdl-tabs__panel is-active" id="tabNewProduct">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="full-width panel mdl-shadow--2dp">
+                <div class="full-width panel-tittle bg-primary text-center tittles">
+                    Editar Objeto
+                </div>
+                <div class="full-width panel-content">
+                    <form>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                    &nbsp; INFORMACIÓN BÁSICA</legend><br>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text"
+                                        pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct">
+                                    <label class="mdl-textfield__label" for="NameProduct">Nombre Producto</label>
+                                    <span class="mdl-textfield__error">Nombre inválido</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                    &nbsp; Descripción Producto</legend><br>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text"
+                                        pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="DescripcionProducto">
+                                    <label class="mdl-textfield__label" for="DescripcionProducto">Descripción
+                                        Producto</label>
+                                    <span class="mdl-textfield__error">DescripcionProducto inválido</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                    &nbsp; TIPO PRODUCTO</legend><br>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <select class="mdl-textfield__input">
+                                        <option value="" disabled="" selected="">Seleccionar Tipo</option>
+                                        <option value="">Formación</option>
+                                        <option value="">Consumibles</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?"
+                                        id="StrockProduct">
+                                    <label class="mdl-textfield__label" for="StrockProduct">Cantidad</label>
+                                    <span class="mdl-textfield__error">Número inválido</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="markProduct">
+                                    <label class="mdl-textfield__label" for="markProduct">Obervaciones
+                                        Producto</label>
+                                    <span class="mdl-textfield__error">Obervaciones Inválidas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center">
+                            <button
+                                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary"
+                                id="btn-addProduct">
+                                <i class="fa-solid fa-pen-to-square"></i>
+                            </button>
+                        <div class="mdl-tooltip" for="btn-addProduct">Editar Objeto</div>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

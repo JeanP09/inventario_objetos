@@ -783,6 +783,7 @@ a,
     display: flex;
     max-width: 400px;
     margin: auto auto;
+    margin-bottom: 10px;
 }
 
 .search_input {
@@ -861,6 +862,8 @@ table {
     border-spacing: 2px;
     border-color: gray;
 }
+
+
 
 
 /* Estilos para botón de filtrado */
