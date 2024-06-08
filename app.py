@@ -29,6 +29,12 @@ def search_route():
         return BuscarObjeto()
     else:
         return render_template('objetos.html')
+
+#Administradores
+@app.route('/administradores')
+def administradores():
+    return render_template('administradores.html')
+
 #REGISTRARME
 @app.route('/register')
 def registrar_usuarios():

@@ -54,7 +54,7 @@ body {
 .menu-btn {
     color: #fff;
     position: fixed;
-    top: 20px;
+    top: 8px;
     left: 20px;
     font-size: 24px;
     cursor: pointer;
@@ -73,7 +73,7 @@ body {
     left: -250px;
     width: 250px;
     height: 100vh;
-    background: #39a900;
+    background: #015dca;
     color: #fff;
     padding-top: 20px;
     transition: left 0.3s ease;
@@ -112,7 +112,7 @@ body {
 }
 
 .sidebar li:hover {
-    background: #646464;
+    background: #979797;
 }
 
 .sidebar a {
@@ -163,8 +163,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: auto; 
-    max-width: 800px;
+    width: auto;
+    max-width: 500px;
     margin: 0 auto;
 }
 

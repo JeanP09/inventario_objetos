@@ -1,72 +1,46 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/static/css/homepage.css">
-    <title>Inicio - Inventario de Objetos</title>
-</head>
+{% block title %}Página de Inicio{% endblock %}
 
-<body>
+{% block content %}
 
-    <!-- Barra de Menú -->
-    <div class="navbar">
-        <ul>
-            <!-- Logo -->
-            <!-- <li><a href="/#home" class="logo">
-                    <img src="/static/img/facebook.png">
-                </a></li> -->
-            <li><a class="active" href="/"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="/quienes_somos"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
-            <li><a href="/sobre_nosotros"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
-            <li><a href="/loginUsu"><i class="fa fa-fw fa-user"></i> Iniciar Sesión</a></li>
-            <li><a href="/register"><i class="fa fa-fw fa-user"></i> Registrarme</a></li>
-        </ul>
+<section class="contenido" id="contenido">
+
+    <div class="contenido_texto">
+        <h2>Inventario de Objetos en Bodega</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Corrupti deserunt ratione, pariatur, rerum culpa labore
+            quod commodi explicabo suscipit, illum impedit fuga assumenda
+            aut cumque dolor eaque temporibus! Enim molestiae provident neque
+            deserunt voluptatum nam commodi nihil aspernatur quo vero.</p>
     </div>
 
-    <!-- Contenido -->
-
-    <section class="contenido" id="contenido">
-
-        <div class="contenido_texto">
-            <h2>Inventario de Objetos en Bodega</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Corrupti deserunt ratione, pariatur, rerum culpa labore
-                quod commodi explicabo suscipit, illum impedit fuga assumenda
-                aut cumque dolor eaque temporibus! Enim molestiae provident neque
-                deserunt voluptatum nam commodi nihil aspernatur quo vero.</p>
-            <a href="/loginUsu" class="boton">Iniciar Sesión</a>
+    <div class="contenedor-botones">
+        <div>
+            <a href="/templates/quienes_Somos.html" style="text-decoration: none; color: white;"  class="boton-cuadrado">
+                <i class="fa fa-fw fa-search" style="color: white;"></i>
+                <span>¿Quiénes Somos?</span>
+            </a>
+            <a href="/templates/login.html" style="text-decoration: none; color: white;"  class="boton-cuadrado">
+                <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+                <span>Iniciar Sesión</span>
+            </a>
+            
         </div>
-    </section>
+        <div>
+            <a href="/templates/sobre_nosotros.html" style="text-decoration: none; color: white;"  class="boton-cuadrado">
+                <i class="fa-solid fa-users" style="color: white;"></i>
+                <span>Sobre Nosotros</span>
+            </a>
+            <a href="/templates/register.html" style="text-decoration: none; color: white;"  class="boton-cuadrado">
+                <i class="fa-solid fa-user-plus" style="color: white;"></i>
+                <span>Registrarme</span>
+            </a>
+        </div>
+    </div>
 
 
 
+</section>
 
-    <!-- Footer -->
-
-    <footer>
-        <h3>www.sena.edu.co</h3>
-        <nav>
-            <ul>
-                <li><a href="https://www.instagram.com/senacomunica/"><img src="/static/img/instagram.png"
-                            alt="instagram_icon"></a></li>
-                <li><a href="https://www.facebook.com/SENA/"><img src="/static/img/facebook.png"
-                            alt="facebook_icon"></a></li>
-                <li><a href="https://twitter.com/SENAComunica"><img src="/static/img/gorjeo.png" alt="twitter_icon"></a>
-                </li>
-                <li><a href="https://www.youtube.com/@SENAComunica"><img src="/static/img/youtube.png"
-                            alt="youtube_icon"></a></li>
-                <li><a href="https://linkedin.com/school/servicio-nacional-de-aprendizaje-sena-/"><img
-                            src="/static/img/linkedin.png" alt="linkedin_icon"></a></li>
-            </ul>
-            <p>@SENAComunica</p>
-        </nav>
-        <br>
-        <p>&copy; 2024 Servicio Nacional de Aprendizaje - SENA</p>
-    </footer>
-
-</body>
-
-</html>
+{% endblock %}
