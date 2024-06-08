@@ -14,7 +14,7 @@ def home():
 def login_route():
     if request.method == 'POST':  # le digo que viene de un dato requerido por POST
         if login(request):
-            return redirect(url_for('listar_objetos'))  # Cambié a redirect y url_for
+            return redirect(url_for('inicio_login'))  # Cambié a redirect y url_for
         else:
             return render_template('login.html')  # DATOS INCORRECTOS, REDIRECCIONA LOGIN NUEVAMENTE
     else:
@@ -29,6 +29,9 @@ def search_route():
         return render_template('objetos.html')
 
 #ADMINISTRADORES
+@app.route('/administradores')
+def administradores():
+    return render_template('administradores.html')
 
 #EDITAR_OBJETO
 @app.route('/editar_objeto')
@@ -37,7 +40,15 @@ def editar_objeto():
 
 #ELIMINAR_OBJETO
 
+#INICIO_LOGIN
+@app.route('/inicio_login')
+def inicio_login():
+    return render_template('inicio_login.html')
+
 #INSTRUCTORES
+@app.route('/instructores')
+def instructores():
+    return render_template('instructores.html')
 
 #INVENTARIO
 @app.route('/inventario')
@@ -88,3 +99,8 @@ def listar_objetos():
 @app.errorhandler(404)
 def not_found(error):
     return redirect('/')
+
+#USUARIOS
+@app.route('/usuarios')
+def usuarios():
+    return render_template('usuarios.html')

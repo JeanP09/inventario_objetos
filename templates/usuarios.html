@@ -3,6 +3,11 @@
 {% block title %}Página de Inicio{% endblock %}
 
 {% block content %}
+
+<a href="/inicio_login" class="regresar" style="color: #39a900; text-decoration: none;">
+    <i class="fas fa-arrow-left"></i> Regresar
+</a>
+
 <!-- Contenido -->
 
 <div class="menu-btn" id="menu-btn">
@@ -16,24 +21,23 @@
         </div>
     </div>
     <ul>
-        <li><a href="/templates/inventario.html">Inventario</a></li>
-        <li><a href="/templates/objetos.html">Objetos</a></li>
-        <li><a href="/templates/prestamos.html">Préstamos</a></li>
-        <li><a href="/templates/reportes.html">Reportes</a></li>
-        <li><a href="/templates/usuarios.html">Usuarios</a></li>
+        <li><a href="/inventario.html">Inventario</a></li>
+        <li><a href="/mostrar_objetos.html">Objetos</a></li>
+        <li><a href="/prestamos.html">Préstamos</a></li>
+        <li><a href="/usuarios.html">Usuarios</a></li>
     </ul>
 </div>
 
 <h1>Elija una categoría deseada de usuarios:</h1>
-<div class="container">
+<div class="contenedor-botones">
 
-    <a href="/templates/administradores.html" class="round-button">
+    <a href="/administradores" class="boton-cuadrado">
         <i class="fa-solid fa-user-tie" style="color: white;"></i>
-        <span style="color: white;">Administradores</span>
+        <span style="color: white; text-decoration: none;">Administradores</span>
     </a>
-    <a href="/templates/instructores.html" class="round-button">
+    <a href="/instructores" class="boton-cuadrado">
         <i class="fa-solid fa-chalkboard-user" style="color: white;"></i>
-        <span style="color: white;">Instructores</span>
+        <span style="color: white; text-decoration: none;">Instructores</span>
     </a>
 </div>
 <script src="/static/javascripts/menu_lateral.js"></script>

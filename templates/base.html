@@ -7,6 +7,7 @@
     <title>{% block title %}Mi Aplicación{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='/static/css/estilos_jinja.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="/static/javascripts/filtrar.js"></script>
     <script src="/static/javascripts/main.js"></script>
@@ -27,6 +28,8 @@
 <body>
     {% include 'header.html' %}
     <div class="content">
+        
+        
         {% block content %}{% endblock %}
     </div>
     {% include 'footer.html' %}
