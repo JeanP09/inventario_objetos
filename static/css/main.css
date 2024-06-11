@@ -87,7 +87,7 @@ body {
 
 .table-responsive {
 	width: 100%;
-	overflow-x: scroll;
+	overflow-x: auto;
 	position: relative;
 }
 
@@ -777,6 +777,52 @@ body {
 .product-card .mdl-card__actions button,
 .product-card .mdl-card__actions a {
 	float: right;
+}
+
+.button_edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 90px;
+    height: 55px;
+    border-radius: 10%;
+	color: white;
+    background-color: #39a900;
+    margin-bottom: 10px;
+}
+
+.button_delete {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 90px;
+    height: 55px;
+    border-radius: 10%;
+	color: white;
+    background-color: #e10000;
+    margin-bottom: 10px;
+}
+
+.boton_prestar {
+    box-shadow: 0 0 0 1.5px #015dca;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 60px;
+    height: 50px;
+    border-radius: 10%;
+    margin-right: -20px;
+    margin-top: -40px;
+    margin-bottom: -10px;
 }
 
 /*=====================================================

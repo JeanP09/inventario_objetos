@@ -22,8 +22,8 @@
 
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
-        <a href="#tabNewProduct" class="mdl-tabs__tab is-active">Nuevo</a>
-        <a href="#tabListProducts" class="mdl-tabs__tab">Lista</a>
+        <a href="#tabNewProduct" class="mdl-tabs__tab is-active" style="text-decoration: none; color: black;">Nuevo</a>
+        <a href="#tabListProducts" class="mdl-tabs__tab" style="text-decoration: none; color: black;">Lista</a>
     </div>
 
     <div class="mdl-tabs__panel is-active" id="tabNewProduct">
@@ -139,22 +139,39 @@
                 <div class="full-width text-center" style="padding: 30px 0;">
                     <div class="mdl-card mdl-shadow--2dp full-width product-card">
                         <div class="mdl-card__supporting-text">
-                            <div class="mdl-card__actions"><span class="nombre_objeto">{{ mostrar.NombreProducto }}</span></div>
+                            <div class="mdl-card__actions"><span class="nombre_objeto">{{ mostrar.NombreProducto}}</span>
+                                <span class="boton_prestar">
+                                    <a class="icon_prestar" style="color: #015dca; text-decoration: none;"
+                                    href="/prestar_objeto/{{ mostrar.IdProductoGeneral }}">
+                                    <i class="fas fa-handshake"></i> Prestar
+                                </a>
+                                </span>
+                            </div>
                         </div>
                         <div class="mdl-card__actions mdl-card--border">
-                            <small class="titulo_objeto">Descripción: <span class="resultado">{{ mostrar.DescripcionProducto }}</span></small><br>
-                            <small class="titulo_objeto">Tipo Producto: <span class="resultado">{{ mostrar.TipoProducto }}</span></small><br>
-                            <small class="titulo_objeto">Cantidad: <span class="resultado">{{ mostrar.CantidadProducto }}</span></small><br>
-                            <small class="titulo_objeto">Observaciones: <span class="resultado">{{ mostrar.ObservacionesProducto }}</span></small>
+                            <small class="titulo_objeto">Descripción: <span class="resultado">{{
+                                    mostrar.DescripcionProducto }}</span></small><br>
+                            <small class="titulo_objeto">Tipo Producto: <span class="resultado">{{ mostrar.TipoProducto
+                                    }}</span></small><br>
+                            <small class="titulo_objeto">Cantidad: <span class="resultado">{{ mostrar.CantidadProducto
+                                    }}</span></small><br>
+                            <small class="titulo_objeto">Observaciones: <span class="resultado">{{
+                                    mostrar.ObservacionesProducto }}</span></small>
                             <br>
                             <br>
-                            <a class="icon_edit" style="color: #39a900; text-decoration: none;" href="/editar_objeto/{{ mostrar.IdProductoGeneral }}">
-                                <i class="fas fa-edit"></i> Editar
-                            </a>
-                            <br>
-                            <a class="icon_delete" style="color: red; text-decoration: none;" href="/eliminar_objeto/{{ mostrar.IdProductoGeneral }}">
-                                <i class="fas fa-trash-alt"></i> Eliminar
-                            </a>
+                            <div class="button_edit">
+                                <a class="icon_edit" style="color: white; text-decoration: none;"
+                                    href="/editar_objeto/{{ mostrar.IdProductoGeneral }}">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                            </div>
+                            <div class="button_delete">
+                                <a class="icon_delete" style="color: white; text-decoration: none;"
+                                    href="/eliminar_objeto/{{ mostrar.IdProductoGeneral }}">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
