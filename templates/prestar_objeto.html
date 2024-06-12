@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+{% block title %}Inventario de Objetos - Inventario de Objetos{% endblock %}
+
+{% block content %}
+
+
+<!-- Contenido -->
+
+<a href="/inicio_login" class="regresar" style="color: #39a900; text-decoration: none;">
+    <i class="fas fa-arrow-left"></i> Regresar
+</a>
+
+<h1>Pretar Objeto</h1>
+
+
+
+<!-- Tabla Objetos Registro y Lista -->
+
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="full-width panel mdl-shadow--2dp">
+                <div class="full-width panel-tittle bg-primary text-center tittles">
+                    Nuevo Préstamo
+                </div>
+                <div class="full-width panel-content">
+                    <form>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
+                                    &nbsp;Información del Producto</legend><br>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9- ]*(\.[0-9]+)?"
+                                        id="BarCode">
+                                    <label class="mdl-textfield__label" for="BarCode">{IdProductoGeneral}</label>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text"
+                                        pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct">
+                                    <label class="mdl-textfield__label" for="NameProduct">{NombreProducto}</label>
+                                    <span class="mdl-textfield__error">Invalid name</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?"
+                                        id="DescripcionProducto">
+                                    <label class="mdl-textfield__label" for="DescripcionProducto">{DescripcionProducto}</label>
+                                    <span class="mdl-textfield__error">Invalid price</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9.]*(\.[0-9]+)?"
+                                        id="TipoProducto">
+                                    <label class="mdl-textfield__label" for="TipoProducto">{TipoProducto}</label>
+                                    <span class="mdl-textfield__error">Invalid discount</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?"
+                                        id="CantidadProducto">
+                                    <label class="mdl-textfield__label" for="CantidadProducto">{CantidadProducto}</label>
+                                    <span class="mdl-textfield__error">Invalid number</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?"
+                                        id="ObservacionesProducto">
+                                    <label class="mdl-textfield__label"
+                                        for="ObservacionesProducto">{ObservacionesProducto}</label>
+                                    <span class="mdl-textfield__error">Invalid number</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp;
+                                    Seleccionar Instructor</legend>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <select class="mdl-textfield__input select2" name="instructor">
+                                        <option value="" disabled selected>{Seleccionar Instructor}</option>
+                                        <option value="1">Instructor 1</option>
+                                        <option value="2">Instructor 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp;
+                                    DATOS DEL PRÉSTAMO</legend><br>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                        style="margin-bottom: 20px;">
+                                        <input type="datetime-local" class="mdl-textfield__input"
+                                            style="padding-top: 20px;" min="2024-03-23T11:00" max="2030-11-23T11:00"
+                                            pattern="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}">
+                                        <label class="mdl-textfield__label" style="font-size: 14px; top: 8px;"
+                                            for="modelProduct">Fecha y hora del préstamo</label>
+                                        <span class="mdl-textfield__error">Formato inválido</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+                                    style="margin-bottom: 20px;">
+                                    <input class="mdl-textfield__input" style="padding-top: 20px;" type="number"
+                                        value="1" min="1" id="markProduct" pattern="[1-9]\d*">
+                                    <label class="mdl-textfield__label" style="font-size: 14px; top: 8px;"
+                                        for="markProduct">Cantidad</label>
+                                    <span class="mdl-textfield__error">Cantidad Inválida</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" pattern=".*"
+                                        id="ObservacionesProducto">
+                                    <label class="mdl-textfield__label" for="ObservacionesProducto">Observaciones
+                                        Préstamo</label>
+                                    <span class="mdl-textfield__error">Observaciones Inválidas</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-center">
+                            <button
+                                class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary"
+                                id="btn-addProduct">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        <div class="mdl-tooltip" for="btn-addProduct">Add Product</div>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/static/javascripts/select_search.js"></script>
+
+{% endblock %}

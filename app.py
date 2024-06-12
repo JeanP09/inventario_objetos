@@ -80,12 +80,17 @@ def ob_consumibles():
 def ob_devolutivos():
     return render_template('devolutivos.html')
 
+#PRESTAR OBJETOS
+@app.route('/prestar_objeto')
+def prestar_objeto():
+    return render_template('prestar_objeto.html')
+
 # OBJETOS
 @app.route('/objetos')
 def ob_generales():
     return render_template('objetos.html')
 
-# MOSTRAR OBJETOS
+# MOSTRAR INVENTARIO
 @app.route('/mostrar_inventario', methods=["GET", "POST"])
 def inventario_objetos():
     return mostrar_inventario()
@@ -94,6 +99,16 @@ def inventario_objetos():
 @app.route('/mostrar_objetos', methods=["GET", "POST"])
 def listar_objetos():
     return mostrar_objetos()
+
+# MOSTRAR INSTRUCTORES
+@app.route('/mostrar_instructores', methods=["GET", "POST"])
+def listar_instructores():
+    return mostrar_instructores()
+
+# MOSTRAR ADMINISTRADORES
+@app.route('/mostrar_administradores', methods=["GET", "POST"])
+def listar_administradores():
+    return mostrar_administradores()
 
 # REDIRECCIONANDO CUANDO LA PAGINA NO EXISTE
 @app.errorhandler(404)

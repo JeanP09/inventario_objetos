@@ -9,7 +9,6 @@
 
 <h1>Instructores</h1>
 
-
 <section class="full-width header-well">
     <div class="full-width header-well-icon">
         <i class="fa-solid fa-chalkboard-user"></i>
@@ -42,17 +41,19 @@
                                 </div>
                                 <div class="mdl-cell mdl-cell--12-col">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <select class="mdl-textfield__input" id="identificationType">
-                                            <option value="" disabled="" selected="">Seleccionar Tipo de Identificación</option>
-                                            <option value="cedula">Cédula de Ciudadanía</option>
-                                            <option value="tarjeta">Tarjeta de Identidad</option>
+                                        <select class="mdl-textfield__input" id="TipoIdentificacion"
+                                            name="TipoIdentificacion">
+                                            <option value="" disabled="" selected="">Seleccionar Tipo de Identificación
+                                            </option>
+                                            <option value="CC">Cédula de Ciudadanía</option>
+                                            <option value="TI">Tarjeta de Identidad</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="mdl-cell mdl-cell--12-col">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="text" id="identification"
-                                            pattern="[a-zA-Z0-9]{5,15}">
+                                        <input class="mdl-textfield__input" type="text" id="NumeroIdentificacion"
+                                            pattern="[a-zA-Z0-9]{5,15}" name="NumeroIdentificacion">
                                         <label class="mdl-textfield__label" for="identification">Número de
                                             Identificación</label>
                                         <span class="mdl-textfield__error">Número de Identificación Inválido (Debe
@@ -61,8 +62,8 @@
                                 </div>
                                 <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="text" id="name"
-                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s'-]{2,50}">
+                                        <input class="mdl-textfield__input" type="text" id="NombreInstructor"
+                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s'-]{2,50}" name="NombreInstructor">
                                         <label class="mdl-textfield__label" for="name">Nombre</label>
                                         <span class="mdl-textfield__error">Nombre Inválido (Debe tener entre 2 y 50
                                             caracteres)</span>
@@ -70,8 +71,8 @@
                                 </div>
                                 <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="text" id="lastname"
-                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s'-]{2,50}">
+                                        <input class="mdl-textfield__input" type="text" id="ApellidoInstructor"
+                                            pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s'-]{2,50}" name="ApellidoInstructor">
                                         <label class="mdl-textfield__label" for="lastname">Apellido</label>
                                         <span class="mdl-textfield__error">Apellido Inválido (Debe tener entre 2 y
                                             50 caracteres)</span>
@@ -79,8 +80,8 @@
                                 </div>
                                 <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="tel" id="phone"
-                                            pattern="[0-9]{1,11}">
+                                        <input class="mdl-textfield__input" type="tel" id="CelularInstructor"
+                                            name="CelularInstructor" pattern="[0-9]{1,11}">
                                         <label class="mdl-textfield__label" for="phone">Número de Celular</label>
                                         <span class="mdl-textfield__error">Número de Celular Inválido (Debe tener
                                             entre 1 y 11 dígitos)</span>
@@ -88,35 +89,10 @@
                                 </div>
                                 <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="email" id="email"
-                                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                                        <input class="mdl-textfield__input" type="email" id="CorreoInstructor"
+                                            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" name="CorreoInstructor">
                                         <label class="mdl-textfield__label" for="email">Correo Electrónico</label>
                                         <span class="mdl-textfield__error">Correo Electrónico Inválido</span>
-                                    </div>
-                                </div>
-                                <div class="mdl-cell mdl-cell--12-col">
-                                    <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
-                                        &nbsp; DETALLES DE CUENTA</legend><br>
-                                </div>
-                                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="text" id="username"
-                                            pattern="[a-zA-Z0-9_]{3,}">
-                                        <label class="mdl-textfield__label" for="username">Nombre de Usuario</label>
-                                        <span class="mdl-textfield__error">Nombre de Usuario Inválido (Debe contener
-                                            al menos 3 caracteres y puede incluir letras, números y guiones
-                                            bajos)</span>
-                                    </div>
-                                </div>
-                                <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="password" id="passwordAdmin"
-                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
-                                        <label class="mdl-textfield__label" for="passwordAdmin">Contraseña</label>
-                                        <span class="mdl-textfield__error">Contraseña Inválida (Debe contener al
-                                            menos 8 caracteres, una letra mayúscula, una letra minúscula, un dígito
-                                            y un carácter especial)</span>
-                                        <br>
                                     </div>
                                 </div>
                             </div>
@@ -134,101 +110,66 @@
             </div>
         </div>
     </div>
+
+    <!-- Lista Instructores -->
     <div class="mdl-tabs__panel" id="tabListClient">
+        <br>
+        {% if instructores %}
+        <p style="color: black;">Instructores encontrados: {{ instructores|length }}</p>
         <div class="mdl-grid">
-            <div
-                class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
+            <div class="mdl-cell mdl-cell--12-col">
                 <div class="full-width panel mdl-shadow--2dp">
-                    <div class="full-width panel-tittle bg-success text-center tittles">
-                        Lista Instructores
-                    </div>
-                    <div class="full-width panel-content">
-                        <form action="#">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-                                <label class="mdl-button mdl-js-button mdl-button--icon" for="searchClient">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </label>
-                                <div class="mdl-textfield__expandable-holder">
-                                    <input class="mdl-textfield__input" type="text" id="searchClient">
-                                    <label class="mdl-textfield__label"></label>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="mdl-list">
-                            <div class="mdl-list__item mdl-list__item--two-line">
-                                <span class="mdl-list__item-primary-content">
-                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                    <span>1. Nombre instructor</span>
-                                    <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                </span>
-                                <a class="mdl-list__item-secondary-action" href="#!"><i
-                                        class="zmdi zmdi-more"></i></a>
-                            </div>
-                            <li class="full-width divider-menu-h"></li>
-                            <div class="mdl-list__item mdl-list__item--two-line">
-                                <span class="mdl-list__item-primary-content">
-                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                    <span>2. Nombre instructor</span>
-                                    <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                </span>
-                                <a class="mdl-list__item-secondary-action" href="#!"><i
-                                        class="zmdi zmdi-more"></i></a>
-                            </div>
-                            <li class="full-width divider-menu-h"></li>
-                            <div class="mdl-list__item mdl-list__item--two-line">
-                                <span class="mdl-list__item-primary-content">
-                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                    <span>3. Nombre instructor</span>
-                                    <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                </span>
-                                <a class="mdl-list__item-secondary-action" href="#!"><i
-                                        class="zmdi zmdi-more"></i></a>
-                            </div>
-                            <li class="full-width divider-menu-h"></li>
-                            <div class="mdl-list__item mdl-list__item--two-line">
-                                <span class="mdl-list__item-primary-content">
-                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                    <span>4. Nombre instructor</span>
-                                    <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                </span>
-                                <a class="mdl-list__item-secondary-action" href="#!"><i
-                                        class="zmdi zmdi-more"></i></a>
-                            </div>
-                            <li class="full-width divider-menu-h"></li>
-                            <div class="mdl-list__item mdl-list__item--two-line">
-                                <span class="mdl-list__item-primary-content">
-                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                    <span>5. Nombre instructor</span>
-                                    <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                </span>
-                                <a class="mdl-list__item-secondary-action" href="#!"><i
-                                        class="zmdi zmdi-more"></i></a>
-                            </div>
-                            <li class="full-width divider-menu-h"></li>
-                            <div class="mdl-list__item mdl-list__item--two-line">
-                                <span class="mdl-list__item-primary-content">
-                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                    <span>6. Nombre instructor</span>
-                                    <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                </span>
-                                <a class="mdl-list__item-secondary-action" href="#!"><i
-                                        class="zmdi zmdi-more"></i></a>
-                            </div>
-                            <li class="full-width divider-menu-h"></li>
-                            <div class="mdl-list__item mdl-list__item--two-line">
-                                <span class="mdl-list__item-primary-content">
-                                    <i class="zmdi zmdi-account mdl-list__item-avatar"></i>
-                                    <span>7. Nombre instructor</span>
-                                    <span class="mdl-list__item-sub-title">Número de Identificación</span>
-                                </span>
-                                <a class="mdl-list__item-secondary-action" href="#!"><i
-                                        class="zmdi zmdi-more"></i></a>
-                            </div>
-                        </div>
+                    <div class="tabla_instructores">
+                        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp full-width table-responsive">
+                            <thead>
+                                <tr>
+                                    <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">ID</th>
+                                    <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Nombre
+                                        Instructor</th>
+                                    <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Tipo
+                                        Identificación</th>
+                                    <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Número de
+                                        Identificación</th>
+                                    <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Correo
+                                        Instructor</th>
+                                    <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Celular
+                                        Instructor</th>
+                                    <th style="text-align: right;">Opciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for mostrar in instructores %}
+                                <tr>
+                                    <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{
+                                        mostrar.IdInstructor }}</td>
+                                    <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{
+                                        mostrar.NombreInstructor }} {{ mostrar.ApellidoInstructor }}</td>
+                                    <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{
+                                        mostrar.TipoIdentificacion }}</td>
+                                    <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{
+                                        mostrar.NumeroIdentificacion }}</td>
+                                    <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{
+                                        mostrar.CorreoInstructor }}</td>
+                                    <td style="text-align: center;" class="mdl-data-table__cell--non-numeric">{{
+                                        mostrar.CelularInstructor }}</td>
+                                    <td>
+                                        <a class="icon_edit" href="/editar_instructor/{{ mostrar.IdInstructor }}"
+                                            style="color: #39a900; text-decoration: none;"><i class="fas fa-edit"></i>
+                                            Editar</a>
+                                        <a class="icon_delete" href="/eliminar_instructor/{{ mostrar.IdInstructor }}"
+                                            style="color: red; text-decoration: none;"><i class="fas fa-trash-alt"></i>
+                                            Eliminar</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-
             </div>
+            {% else %}
+            <p>No hay instructores para mostrar.</p>
+            {% endif %}
         </div>
     </div>
 </div>

@@ -28,6 +28,10 @@ body {
 
 .text-condensedLight {
 	font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+    font-size: medium;
+    margin-left: -10px;
+    margin-bottom: -20px;
 }
 
 .text-center {

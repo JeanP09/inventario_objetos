@@ -86,5 +86,37 @@ def mostrar_objetos():
     finally:
         if connection.is_connected():
             connection.close()
+            
+# MOSTRAR ADMINISTRADORES
+def mostrar_administradores():
+    try:
+        connection = connectionBD()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM usuarios")
+        usuarios = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return render_template("administradores.html", usuarios=usuarios)
+    except Exception as e:
+        print(f"Error en la función mostrar_administradores: {e}")
+        return render_template("administradores.html", usuarios=[])
+    finally:
+        if connection.is_connected():
+            connection.close()
 
-
+# MOSTRAR INSTRUCTORES
+def mostrar_instructores():
+    try:
+        connection = connectionBD()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM instructores")
+        instructores = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return render_template("instructores.html", instructores=instructores)
+    except Exception as e:
+        print(f"Error en la función mostrar_instructores: {e}")
+        return render_template("instructores.html", instructores=[])
+    finally:
+        if connection.is_connected():
+            connection.close()

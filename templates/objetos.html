@@ -43,8 +43,9 @@
                                 <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text"
-                                            pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct">
-                                        <label class="mdl-textfield__label" for="NameProduct">Nombre Producto</label>
+                                            pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" name="NombreProducto"
+                                            id="NombreProducto">
+                                        <label class="mdl-textfield__label" for="NombreProducto">Nombre Producto</label>
                                         <span class="mdl-textfield__error">Nombre inválido</span>
                                     </div>
                                 </div>
@@ -55,7 +56,8 @@
                                 <div class="mdl-cell mdl-cell--12-col">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text"
-                                            pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="DescripcionProducto">
+                                            pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" name="DescripcionProducto"
+                                            id="DescripcionProducto">
                                         <label class="mdl-textfield__label" for="DescripcionProducto">Descripción
                                             Producto</label>
                                         <span class="mdl-textfield__error">DescripcionProducto inválido</span>
@@ -67,24 +69,25 @@
                                 </div>
                                 <div class="mdl-cell mdl-cell--12-col">
                                     <div class="mdl-textfield mdl-js-textfield">
-                                        <select class="mdl-textfield__input">
+                                        <select class="mdl-textfield__input" name="TipoProducto">
                                             <option value="" disabled="" selected="">Seleccionar Tipo</option>
-                                            <option value="">Formación</option>
-                                            <option value="">Consumibles</option>
+                                            <option value="Devolutivos">Devolutivos</option>
+                                            <option value="Consumibles">Consumibles</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?"
-                                            id="StrockProduct">
+                                            id="CantidadProducto" name="CantidadProducto">
                                         <label class="mdl-textfield__label" for="StrockProduct">Cantidad</label>
                                         <span class="mdl-textfield__error">Número inválido</span>
                                     </div>
                                 </div>
                                 <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input class="mdl-textfield__input" type="text" id="markProduct">
+                                        <input class="mdl-textfield__input" type="text" id="ObservacionesProducto"
+                                            name="ObservacionesProducto">
                                         <label class="mdl-textfield__label" for="markProduct">Obervaciones
                                             Producto</label>
                                         <span class="mdl-textfield__error">Obervaciones Inválidas</span>
@@ -139,12 +142,13 @@
                 <div class="full-width text-center" style="padding: 30px 0;">
                     <div class="mdl-card mdl-shadow--2dp full-width product-card">
                         <div class="mdl-card__supporting-text">
-                            <div class="mdl-card__actions"><span class="nombre_objeto">{{ mostrar.NombreProducto}}</span>
+                            <div class="mdl-card__actions"><span class="nombre_objeto">{{
+                                    mostrar.NombreProducto}}</span>
                                 <span class="boton_prestar">
                                     <a class="icon_prestar" style="color: #015dca; text-decoration: none;"
-                                    href="/prestar_objeto/{{ mostrar.IdProductoGeneral }}">
-                                    <i class="fas fa-handshake"></i> Prestar
-                                </a>
+                                        href="/prestar_objeto/{{ mostrar.IdProductoGeneral }}">
+                                        <i class="fas fa-handshake"></i> Prestar
+                                    </a>
                                 </span>
                             </div>
                         </div>
@@ -152,11 +156,14 @@
                             <small class="titulo_objeto">Descripción: <span class="resultado">{{
                                     mostrar.DescripcionProducto }}</span></small><br>
                             <small class="titulo_objeto">Tipo Producto: <span class="resultado">{{ mostrar.TipoProducto
-                                    }}</span></small><br>
+                                    }}
+                                </span></small><br>
                             <small class="titulo_objeto">Cantidad: <span class="resultado">{{ mostrar.CantidadProducto
-                                    }}</span></small><br>
+                                    }}
+                                </span></small><br>
                             <small class="titulo_objeto">Observaciones: <span class="resultado">{{
-                                    mostrar.ObservacionesProducto }}</span></small>
+                                    mostrar.ObservacionesProducto }}
+                                </span></small>
                             <br>
                             <br>
                             <div class="button_edit">
@@ -183,6 +190,6 @@
         {% endif %}
     </div>
 </div>
-<script src="/static/javascripts/menu_lateral.js"></script>
+
 
 {% endblock %}
