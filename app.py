@@ -90,6 +90,11 @@ def prestar_objeto():
 def ob_generales():
     return render_template('objetos.html')
 
+# PRESTAMOS
+@app.route('/prestamos')
+def prestamos():
+    return render_template('prestamos.html')
+
 # MOSTRAR INVENTARIO
 @app.route('/mostrar_inventario', methods=["GET", "POST"])
 def inventario_objetos():
