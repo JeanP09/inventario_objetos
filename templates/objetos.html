@@ -138,12 +138,12 @@
         <p style="color: black;">Objetos encontrados: {{ objetos|length }}</p>
         <div class="mdl-grid">
             {% for mostrar in objetos %}
-            <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
+            <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--4-col-tablet mdl-cell--4-col-desktop">
                 <div class="full-width text-center" style="padding: 30px 0;">
                     <div class="mdl-card mdl-shadow--2dp full-width product-card">
                         <div class="mdl-card__supporting-text">
-                            <div class="mdl-card__actions"><span class="nombre_objeto">{{
-                                    mostrar.NombreProducto}}</span>
+                            <div class="mdl-card__actions">
+                                <span class="nombre_objeto">{{ mostrar.NombreProducto }}</span>
                                 <span class="boton_prestar">
                                     <a class="icon_prestar" style="color: #015dca; text-decoration: none;"
                                         href="/prestar_objeto">
@@ -156,16 +156,12 @@
                             <small class="titulo_objeto">Descripción: <span class="resultado">{{
                                     mostrar.DescripcionProducto }}</span></small><br>
                             <small class="titulo_objeto">Tipo Producto: <span class="resultado">{{ mostrar.TipoProducto
-                                    }}
-                                </span></small><br>
+                                    }}</span></small><br>
                             <small class="titulo_objeto">Cantidad: <span class="resultado">{{ mostrar.CantidadProducto
-                                    }}
-                                </span></small><br>
+                                    }}</span></small><br>
                             <small class="titulo_objeto">Observaciones: <span class="resultado">{{
-                                    mostrar.ObservacionesProducto }}
-                                </span></small>
-                            <br>
-                            <br>
+                                    mostrar.ObservacionesProducto }}</span></small>
+                            <br><br>
                             <div class="button_edit">
                                 <a class="icon_edit" style="color: white; text-decoration: none;"
                                     href="/editar_objeto/{{ mostrar.IdProductoGeneral }}">
@@ -178,7 +174,6 @@
                                     <i class="fas fa-trash-alt"></i> Eliminar
                                 </a>
                             </div>
-
                         </div>
                     </div>
                 </div>
