@@ -120,3 +120,55 @@ def mostrar_instructores():
     finally:
         if connection.is_connected():
             connection.close()
+
+# MOSTRAR TODOS LOS PRÉSTAMOS
+def mostrar_prestamos():
+    try:
+        connection = connectionBD()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM vista_prestamos")
+        prestamos = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return render_template("todos_prestamos.html", prestamos=prestamos)
+    except Exception as e:
+        print(f"Error en la función mostrar_prestamos: {e}")
+        return render_template("todos_prestamos.html", prestamos=[])
+    finally:
+        if connection.is_connected():
+            connection.close()
+            
+# MOSTRAR PRÉSTAMOS EN CURSO
+def mostrar_prestamos_en_curso():
+    try:
+        connection = connectionBD()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM prestamos_en_curso")
+        prestamos = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return render_template("prestamos_en_curso.html", prestamos=prestamos)
+    except Exception as e:
+        print(f"Error en la función mostrar_prestamos: {e}")
+        return render_template("prestamos_en_curso.html", prestamos=[])
+    finally:
+        if connection.is_connected():
+            connection.close()
+            
+# MOSTRAR PRÉSTAMOS CULMINADOS
+def mostrar_prestamos_culminados():
+    try:
+        connection = connectionBD()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM prestamos_culminados")
+        prestamos = cursor.fetchall()
+        cursor.close()
+        connection.close()
+        return render_template("prestamos_culminados.html", prestamos=prestamos)
+    except Exception as e:
+        print(f"Error en la función mostrar_prestamos: {e}")
+        return render_template("prestamos_culminados.html", prestamos=[])
+    finally:
+        if connection.is_connected():
+            connection.close()
+            

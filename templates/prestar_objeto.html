@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Inventario de Objetos - Inventario de Objetos{% endblock %}
+{% block title %}Prestar Objeto - Inventario de Objetos{% endblock %}
 
 {% block content %}
 
@@ -11,7 +11,7 @@
     <i class="fas fa-arrow-left"></i> Regresar
 </a>
 
-<h1>Pretar Objeto</h1>
+<h1>Prestar Objeto</h1>
 
 
 
@@ -110,7 +110,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
                                     style="margin-bottom: 20px;">
                                     <input class="mdl-textfield__input" style="padding-top: 20px;" type="number"
@@ -121,11 +121,19 @@
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <select class="mdl-textfield__input select2" name="instructor">
+                                        <option value="" disabled selected>Seleccionar Estado Prestamo</option>
+                                        <option value="En curso">En curso</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                     <input class="mdl-textfield__input" type="text" pattern=".*"
                                         id="ObservacionesProducto">
                                     <label class="mdl-textfield__label" for="ObservacionesProducto">Observaciones
-                                        Préstamo</label>
+                                        del Préstamo</label>
                                     <span class="mdl-textfield__error">Observaciones Inválidas</span>
                                 </div>
                             </div>

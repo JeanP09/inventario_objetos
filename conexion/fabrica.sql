@@ -1,5 +1,5 @@
-CREATE DATABASE fabrica_2;
-USE fabrica_2;
+CREATE DATABASE fabrica;
+USE fabrica;
 
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
@@ -21,7 +21,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `fabrica_2`
+-- Base de datos: `fabrica`
 
 
 
@@ -56,10 +56,12 @@ CREATE TABLE `prestamos` (
     `IdProducto` int(11) DEFAULT NULL,
     `FechaHoraPrestamo` datetime DEFAULT NULL,
     `CantidadPrestamo` int(11) DEFAULT NULL,
+    `EstadoPrestamo` enum('En curso', 'Culminados') DEFAULT NULL,
     `ObservacionesPrestamo` varchar(225) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 SELECT * FROM prestamos;
+
 
 -- --------------------------------------------------------
 
@@ -200,6 +202,54 @@ ALTER TABLE `devoluciones`
 ALTER TABLE `prestamos`
     ADD CONSTRAINT `prestamos_ibfk_1` FOREIGN KEY (`IdInstructor`) REFERENCES `instructores` (`IdInstructor`),
     ADD CONSTRAINT `prestamos_ibfk_2` FOREIGN KEY (`IdProducto`) REFERENCES `productosgenerales` (`IdProducto`);
+    
+--
+-- Inserts para la tabla `prestamos`
+--
+INSERT INTO prestamos (IdInstructor, IdProducto, FechaHoraPrestamo, CantidadPrestamo, EstadoPrestamo, ObservacionesPrestamo)
+VALUES
+    (1, 4, '2024-06-12 10:30:00', 2, 'En curso', 'N/A'),
+    (2, 3, '2024-06-13 11:45:00', 1, 'Culminados', 'Cable deteriorado');
+SELECT * FROM prestamos;
+
+--
+-- Vista para la tabla `prestamos`
+--
+CREATE VIEW vista_prestamos AS
+SELECT p.IdPrestamo, p.IdInstructor, i.NombreInstructor, p.IdProducto, pg.NombreProducto, p.FechaHoraPrestamo, p.CantidadPrestamo, p.EstadoPrestamo, p.ObservacionesPrestamo
+FROM prestamos p
+JOIN productosgenerales pg ON p.IdProducto = pg.IdProducto
+JOIN instructores i ON p.IdInstructor = i.IdInstructor;
+
+SELECT * FROM vista_prestamos;
+
+
+
+CREATE VIEW prestamos_en_curso AS
+SELECT p.IdPrestamo, p.IdInstructor, i.NombreInstructor, p.IdProducto, pg.NombreProducto, 
+    p.FechaHoraPrestamo, p.CantidadPrestamo, p.EstadoPrestamo, p.ObservacionesPrestamo
+FROM prestamos p
+JOIN productosgenerales pg ON p.IdProducto = pg.IdProducto
+JOIN instructores i ON p.IdInstructor = i.IdInstructor
+WHERE p.EstadoPrestamo = 'En curso';
+
+SELECT * FROM prestamos_en_curso;
+
+
+
+CREATE VIEW prestamos_culminados AS
+SELECT p.IdPrestamo, p.IdInstructor, i.NombreInstructor, p.IdProducto, pg.NombreProducto, 
+    p.FechaHoraPrestamo, p.CantidadPrestamo, p.EstadoPrestamo, p.ObservacionesPrestamo
+FROM prestamos p
+JOIN productosgenerales pg ON p.IdProducto = pg.IdProducto
+JOIN instructores i ON p.IdInstructor = i.IdInstructor
+WHERE p.EstadoPrestamo = 'Culminados';
+
+SELECT * FROM prestamos_culminados;
+
+
+
+
 COMMIT;
 
 

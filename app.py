@@ -115,12 +115,43 @@ def listar_instructores():
 def listar_administradores():
     return mostrar_administradores()
 
+# MOSTRAR PRÉSTAMOS
+@app.route('/mostrar_prestamos', methods=["GET", "POST"])
+def listar_prestamos():
+    return mostrar_prestamos()
+
+# MOSTRAR PRÉSTAMOS EN CURSO
+@app.route('/mostrar_prestamos_en_curso', methods=["GET", "POST"])
+def listar_prestamos_en_curso():
+    return mostrar_prestamos_en_curso()
+
+# MOSTRAR PRÉSTAMOS CULMINADOS
+@app.route('/mostrar_prestamos_culminados', methods=["GET", "POST"])
+def listar_prestamos_culminados():
+    return mostrar_prestamos_culminados()
+
 # REDIRECCIONANDO CUANDO LA PAGINA NO EXISTE
 @app.errorhandler(404)
 def not_found(error):
     return redirect('/')
 
+#TODOS PRÉSTAMOS
+@app.route('/todos_prestamos')
+def todos_prestamos():
+    return render_template('todos_prestamos.html')
+
+#PRÉSTAMOS EN CURSO
+@app.route('/prestamos_en_curso')
+def prestamos_en_curso():
+    return render_template('prestamos_en_curso.html')
+
+#PRÉSTAMOS CULMINADOS
+@app.route('/prestamos_culminados')
+def prestamos_culminados():
+    return render_template('prestamos_culminados.html')
+
 #USUARIOS
 @app.route('/usuarios')
 def usuarios():
     return render_template('usuarios.html')
+
