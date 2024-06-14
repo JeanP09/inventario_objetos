@@ -62,13 +62,13 @@ def registrar_usuarios():
 
 # SOBRE NOSOTROS - ABOUT US
 @app.route('/sobre_nosotros')
-def about_us():
+def sobre_nosotros():
     return render_template('sobre_nosotros.html')
 
 # QUIENES SOMOS?
-@app.route('/quienes_somos')
-def quien_somos():
-    return render_template('quienes_somos.html')
+@app.route('/justificacion_proyecto')
+def justificacion_proyecto():
+    return render_template('justificacion_proyecto.html')
 
 # CONSUMIBLES
 @app.route('/consumibles')

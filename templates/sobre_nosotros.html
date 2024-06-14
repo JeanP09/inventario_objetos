@@ -1,67 +1,54 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="/static/css/sobre_nosotros.css">
-    <title>¿Quiénes somos? - Inventario de Objetos</title>
-</head>
+{% block title %}Sobre Nosotros - Inventario de Objetos{% endblock %}
 
-<body>
+{% block content %}
 
-    <!-- Barra de Menú -->
-    <div class="navbar">
-        <ul> 
-            <!-- Logo -->
-            <!-- <li><a href="/#home" class="logo">
-                    <img src="/static/img/facebook.png">
-                </a></li> --> 
-                
-            <li><a href="/"><i class="fas fa-home"></i> Inicio</a></li>
-            <li><a href="/quienes_somos"><i class="fa fa-fw fa-search"></i> ¿Quiénes Somos?</a></li>
-            <li><a class="active" href="/sobre_nosotros"><i class="fa-solid fa-users"></i> Sobre Nosotros</a></li>
-            <li><a href="/login"><i class="fa fa-fw fa-user"></i> Iniciar Sesión</a></li>
-            <li><a href="/register"><i class="fa fa-fw fa-user"></i> Registrarme</a></li>
-        </ul>
-    </div>
+<a href="/homepage" class="regresar" style="color: #39a900; text-decoration: none;">
+    <i class="fas fa-arrow-left"></i> Regresar
+</a>
 
-    <!-- Contenido -->
+<!-- Contenido -->
 
-    <section class="contenido" id="contenido">
+<h1>Sobre Nosotros</h1>
+<section class="about_us">
+    <p>
+        En el proyecto de <strong>Inventario de Objetos en Bodega</strong>, somos un equipo pequeño pero apasionado,
+        compuesto por tres
+        profesionales dedicados. Juntos, hemos combinado nuestras habilidades y conocimientos para crear una página web
+        funcional y atractiva. Conoce al equipo que hizo posible este proyecto:
+    </p>
 
-        <div class="contenido_texto">
-            <h2>Sobre Nosotros</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Corrupti deserunt ratione, pariatur, rerum culpa labore
-                quod commodi explicabo suscipit, illum impedit fuga assumenda
-                aut cumque dolor eaque temporibus! Enim molestiae provident neque
-                deserunt voluptatum nam commodi nihil aspernatur quo vero.</p>
-        </div>
-    </section>
+    <h5>Diseño, Funcionalidad y Desarrollo</h5>
+    <p>Nuestro equipo está formado por:</p>
+    <p>
+        <strong>
+            • Diana Catalina Barrera Rodríguez<br>
+            • David Santiago Urrea Calvache<br>
+            • Juan Pablo Guzmán Martínez
+        </strong>
+    </p>
+    <p>
+        Cada uno de nosotros dentro de el proyecto del Servicio Nacional de Aprendizaje - SENA del <i>CENTRO DE
+            PRODUCCION DE SOLUCIONES INTELIGENTES - ADSO</i> ha contribuido de manera significativa en todas las
+        áreas del proyecto, desde el diseño visual hasta la funcionalidad y el desarrollo técnico. Trabajando codo a
+        codo, hemos asegurado que cada aspecto
+        de la página web refleje nuestra visión compartida y ofrezca una experiencia excepcional para nuestros usuarios.
+    </p>
+    <h5>Nuestra Colaboración</h5>
+    <p>
+        Dentro del proyecyo de <strong>Inventario de Objetos en Bodega</strong>, creemos que la colaboración es clave
+        para el éxito. Hemos unido nuestras fuerzas para
+        garantizar que cada detalle de nuestra página web esté bien diseñado, sea intuitivo y funcione sin problemas.
+        Nuestro enfoque multidisciplinario nos permite abordar los desafíos desde diferentes perspectivas, logrando
+        resultados que superan nuestras expectativas.
+    </p>
+    <h5>Nuestro Compromiso</h5>
+    <p>
+        Estamos comprometidos a seguir mejorando y evolucionando, siempre enfocados en brindar la mejor experiencia
+        posible a nuestros usuarios. Aunque somos un equipo pequeño, nuestra pasión y dedicación nos impulsan a alcanzar
+        grandes logros.
+    </p>
+</section>
 
-
-
-
-    <!-- Footer -->
-
-    <footer>
-        <h3>www.sena.edu.co</h3>
-        <nav>
-            <ul>
-                <li><a href="https://www.instagram.com/senacomunica/"><img src="/static/img/instagram.png" alt="instagram_icon"></a></li>
-                <li><a href="https://www.facebook.com/SENA/"><img src="/static/img/facebook.png" alt="facebook_icon"></a></li>
-                <li><a href="https://twitter.com/SENAComunica"><img src="/static/img/gorjeo.png" alt="twitter_icon"></a></li>
-                <li><a href="https://www.youtube.com/@SENAComunica"><img src="/static/img/youtube.png" alt="youtube_icon"></a></li>
-                <li><a href="https://linkedin.com/school/servicio-nacional-de-aprendizaje-sena-/"><img src="/static/img/linkedin.png" alt="linkedin_icon"></a></li>
-            </ul>
-            <p>@SENAComunica</p>
-        </nav>
-        <br>
-        <p>&copy; 2024 Servicio Nacional de Aprendizaje - SENA</p>
-    </footer>
-
-</body>
-
-</html>
+{% endblock %}

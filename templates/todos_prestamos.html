@@ -61,7 +61,15 @@
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.EstadoPrestamo }}</td>
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.ObservacionesPrestamo }}</td>
                         <td>
-                            <a class="icon_edit" href="/editar_objeto/{{ mostrar.IdProductoGeneral }}" style="color: #39a900; text-decoration: none;"><i class="fa-solid fa-flag-checkered"></i> Culminar</a>
+                            {% if mostrar.EstadoPrestamo == 'En curso' %}
+                                <a class="icon_edit" href="/editar_objeto/{{ mostrar.IdProductoGeneral }}" style="color: #39a900; text-decoration: none;">
+                                    <i class="fa-solid fa-flag-checkered"></i> Culminar
+                                </a>
+                            {% else %}
+                                <span style="color: gray;">
+                                    <i class="fa-solid fa-flag-checkered"></i> Culminado
+                                </span>
+                            {% endif %}
                         </td>
                     </tr>
                     {% endfor %}
