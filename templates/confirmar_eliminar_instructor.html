@@ -83,13 +83,13 @@
     }
 </style>
 
-<a href="/mostrar_objetos" class="regresar">
+<a href="/listar_instructores" class="regresar" style="text-decoration: none;">
     <i class="fas fa-arrow-left"></i> Regresar
 </a>
 
 <h1>Confirmar Eliminación</h1>
 
-<div class="mdl-tabs__panel is-active" id="tabDeleteProduct">
+<div class="mdl-tabs__panel is-active" id="tabDeleteInstructor">
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
             <div class="full-width panel mdl-shadow--2dp">
@@ -97,20 +97,23 @@
                     Confirmar Eliminación
                 </div>
                 <div class="full-width panel-content">
-                    <p>¿Estás seguro de que deseas eliminar el siguiente objeto?</p>
+                    <p>¿Estás seguro de que deseas eliminar al siguiente instructor?</p>
                     <ul style="display: contents;">
-                        <li><strong>Nombre:</strong> {{ producto.NombreProducto }}</li>
-                        <li><strong>Descripción:</strong> {{ producto.DescripcionProducto }}</li>
-                        <li><strong>Tipo:</strong> {{ producto.TipoProducto }}</li>
-                        <li><strong>Cantidad:</strong> {{ producto.CantidadProducto }}</li>
-                        <li><strong>Observaciones:</strong> {{ producto.ObservacionesProducto }}</li>
+                        <li><strong>Nombre:</strong> {{ instructor.NombreInstructor }}</li>
+                        <li><strong>Apellidos:</strong> {{ instructor.ApellidoInstructor }}</li>
+                        <li><strong>Tipo Identificación:</strong> {{ instructor.TipoIdentificacion }}</li>
+                        <li><strong>Número de Identificación:</strong> {{ instructor.NumeroIdentificacion }}</li>
+                        <li><strong>Correo:</strong> {{ instructor.CorreoInstructor }}</li>
+                        <li><strong>Número de Celular:</strong> {{ instructor.CelularInstructor }}</li>
                     </ul>
-                    <form method="POST" action="{{ url_for('eliminar_objeto', id=producto.IdProducto) }}">
+                    <form method="POST" action="{{ url_for('eliminar_instructor', id=instructor.IdInstructor) }}">
                         <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored_confi">
                             Confirmar Eliminación
                         </button>
-                    </form>
-                    <a href="{{ url_for('inventario_objetos') }}" class="mdl-button mdl-js-button mdl-button--raised mdl-button--cancel" style="text-decoration: none; color: white;">
+                    </form>                    
+                    <a href="{{ url_for('listar_instructores') }}"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-button--cancel"
+                        style="text-decoration: none; color: white;">
                         Cancelar
                     </a>
                 </div>

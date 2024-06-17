@@ -9,7 +9,6 @@
 
 <h1>Administradores</h1>
 
-
 <section class="full-width header-well">
     <div class="full-width header-well-icon">
         <i class="fa-solid fa-user-tie"></i>
@@ -22,6 +21,7 @@
         </p>
     </div>
 </section>
+
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
         <a href="#tabNewAdmin" class="mdl-tabs__tab is-active" style="text-decoration: none; color: black;">Nuevo</a>
@@ -32,10 +32,10 @@
             <div class="mdl-cell mdl-cell--12-col">
                 <div class="full-width panel mdl-shadow--2dp">
                     <div class="full-width panel-tittle bg-primary text-center tittles">
-                        Nuevo Administrator
+                        Nuevo Administrador
                     </div>
                     <div class="full-width panel-content">
-                        <form id="form-addAdmin">
+                        <form method="POST" action="{{ url_for('registrar_administrador') }}">
                             <div class="mdl-grid">
                                 <div class="mdl-cell mdl-cell--12-col">
                                     <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
@@ -56,7 +56,7 @@
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="NumeroIdentificacion"
                                             pattern="[a-zA-Z0-9]{5,15}" name="NumeroIdentificacion">
-                                        <label class="mdl-textfield__label" for="identification">Número de
+                                        <label class="mdl-textfield__label" for="NumeroIdentificacion">Número de
                                             Identificación</label>
                                         <span class="mdl-textfield__error">Número de Identificación Inválido (Debe
                                             tener entre 5 y 15 caracteres alfanuméricos)</span>
@@ -66,7 +66,7 @@
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="NombreUsuario"
                                             pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s'-]{2,50}" name="NombreUsuario">
-                                        <label class="mdl-textfield__label" for="name">Nombre</label>
+                                        <label class="mdl-textfield__label" for="NombreUsuario">Nombre</label>
                                         <span class="mdl-textfield__error">Nombre Inválido (Debe tener entre 2 y 50
                                             caracteres)</span>
                                     </div>
@@ -75,7 +75,7 @@
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="text" id="ApellidoUsuario"
                                             pattern="[A-Za-zÁÉÍÓÚÑáéíóúñ\s'-]{2,50}" name="ApellidoUsuario">
-                                        <label class="mdl-textfield__label" for="lastname">Apellido</label>
+                                        <label class="mdl-textfield__label" for="ApellidoUsuario">Apellido</label>
                                         <span class="mdl-textfield__error">Apellido Inválido (Debe tener entre 2 y
                                             50 caracteres)</span>
                                     </div>
@@ -83,8 +83,9 @@
                                 <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                                         <input class="mdl-textfield__input" type="tel" id="CelularUsuario"
-                                            name="CelularUsuario" pattern="[0-9]{1,11}">
-                                        <label class="mdl-textfield__label" for="phone">Número de Celular</label>
+                                            name="CelularUsuario" pattern="[0-9]{1,10}">
+                                        <label class="mdl-textfield__label" for="CelularUsuario">Número de
+                                            Celular</label>
                                         <span class="mdl-textfield__error">Número de Celular Inválido (Debe tener
                                             entre 1 y 11 dígitos)</span>
                                     </div>
@@ -99,7 +100,8 @@
                                         <input class="mdl-textfield__input" type="email" id="CorreoUsuario"
                                             pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
                                             name="CorreoUsuario">
-                                        <label class="mdl-textfield__label" for="email">Correo Electrónico</label>
+                                        <label class="mdl-textfield__label" for="CorreoUsuario">Correo
+                                            Electrónico</label>
                                         <span class="mdl-textfield__error">Correo Electrónico Inválido</span>
                                     </div>
                                 </div>
@@ -108,7 +110,7 @@
                                         <input class="mdl-textfield__input" type="password" id="ContrasenaUsuario"
                                             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
                                             name="ContrasenaUsuario">
-                                        <label class="mdl-textfield__label" for="passwordAdmin">Contraseña</label>
+                                        <label class="mdl-textfield__label" for="ContrasenaUsuario">Contraseña</label>
                                         <span class="mdl-textfield__error">Contraseña Inválida (Debe contener al
                                             menos 8 caracteres, una letra mayúscula, una letra minúscula, un dígito
                                             y un carácter especial)</span>
@@ -117,9 +119,8 @@
                                 </div>
                             </div>
                             <p class="text-center">
-                                <button
-                                    class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary"
-                                    id="btn-addAdmin" type="submit" form="form-addAdmin">
+                                <button type="submit"
+                                    class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored bg-primary">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             <div class="mdl-tooltip" for="btn-addAdmin">Agregar Administrador</div>
@@ -174,10 +175,12 @@
                                     <td style="text-align: center;" class="mdl-data-table__cell--non-numeric">{{
                                         mostrar.CelularUsuario }}</td>
                                     <td>
-                                        <a class="icon_edit" href="/editar_administrador/{{ mostrar.IdUsuario }}"
+                                        <a class="icon_edit"
+                                            href="{{ url_for('editar_administrador', id=mostrar.IdUsuario) }}"
                                             style="color: #39a900; text-decoration: none;"><i class="fas fa-edit"></i>
                                             Editar</a>
-                                        <a class="icon_delete" href="/eliminar_administrador/{{ mostrar.IdUsuario }}"
+                                        <a class="icon_delete"
+                                            href="{{ url_for('confirmar_eliminar_administrador', id=mostrar.IdUsuario) }}"
                                             style="color: red; text-decoration: none;"><i class="fas fa-trash-alt"></i>
                                             Eliminar</a>
                                     </td>
@@ -189,9 +192,9 @@
                 </div>
             </div>
         </div>
+        {% else %}
+        <p>No hay administradores para mostrar.</p>
+        {% endif %}
     </div>
-    {% else %}
-    <p>No hay administradores para mostrar.</p>
-    {% endif %}
 </div>
 {% endblock %}

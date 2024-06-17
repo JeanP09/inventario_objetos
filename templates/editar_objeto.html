@@ -4,12 +4,13 @@
 
 {% block content %}
 
-<a href="/objetos" class="regresar">
+<a href="/mostrar_inventario" class="regresar" style="color: #39a900; text-decoration: none;">
     <i class="fas fa-arrow-left"></i> Regresar
 </a>
 
 <h1>Editar Objetos</h1>
 
+{% if producto %}
 <div class="mdl-tabs__panel is-active" id="tabNewProduct">
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
@@ -18,7 +19,7 @@
                     Editar Objeto
                 </div>
                 <div class="full-width panel-content">
-                    <form>
+                    <form method="POST">
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--12-col">
                                 <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
@@ -26,9 +27,10 @@
                             </div>
                             <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text"
-                                        pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="NameProduct">
-                                    <label class="mdl-textfield__label" for="NameProduct">Nombre Producto</label>
+                                    <input class="mdl-textfield__input" type="text" name="NombreProducto"
+                                        value="{{ producto.NombreProducto }}" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?"
+                                        id="NombreProducto">
+                                    <label class="mdl-textfield__label" for="NombreProducto">Nombre Producto</label>
                                     <span class="mdl-textfield__error">Nombre inválido</span>
                                 </div>
                             </div>
@@ -38,11 +40,11 @@
                             </div>
                             <div class="mdl-cell mdl-cell--12-col">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text"
-                                        pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?" id="DescripcionProducto">
-                                    <label class="mdl-textfield__label" for="DescripcionProducto">Descripción
-                                        Producto</label>
-                                    <span class="mdl-textfield__error">DescripcionProducto inválido</span>
+                                    <input class="mdl-textfield__input" type="text" name="DescripcionProducto"
+                                        value="{{ producto.DescripcionProducto }}" pattern="-?[A-Za-z0-9áéíóúÁÉÍÓÚ ]*(\.[0-9]+)?"
+                                        id="DescripcionProducto">
+                                    <label class="mdl-textfield__label" for="DescripcionProducto">Descripción Producto</label>
+                                    <span class="mdl-textfield__error">Descripción inválida</span>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--12-col">
@@ -51,27 +53,27 @@
                             </div>
                             <div class="mdl-cell mdl-cell--12-col">
                                 <div class="mdl-textfield mdl-js-textfield">
-                                    <select class="mdl-textfield__input">
-                                        <option value="" disabled="" selected="">Seleccionar Tipo</option>
-                                        <option value="">Formación</option>
-                                        <option value="">Consumibles</option>
+                                    <select class="mdl-textfield__input" name="TipoProducto">
+                                        <option value="Devolutivos" {% if producto.TipoProducto == 'Devolutivos' %}selected{% endif %}>Devolutivos</option>
+                                        <option value="Consumibles" {% if producto.TipoProducto == 'Consumibles' %}selected{% endif %}>Consumibles</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?"
-                                        id="StrockProduct">
-                                    <label class="mdl-textfield__label" for="StrockProduct">Cantidad</label>
+                                    <input class="mdl-textfield__input" type="number" name="CantidadProducto"
+                                        value="{{ producto.CantidadProducto }}" pattern="-?[0-9]*(\.[0-9]+)?"
+                                        id="CantidadProducto">
+                                    <label class="mdl-textfield__label" for="CantidadProducto">Cantidad</label>
                                     <span class="mdl-textfield__error">Número inválido</span>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="markProduct">
-                                    <label class="mdl-textfield__label" for="markProduct">Obervaciones
-                                        Producto</label>
-                                    <span class="mdl-textfield__error">Obervaciones Inválidas</span>
+                                    <input class="mdl-textfield__input" type="text" name="ObservacionesProducto"
+                                        value="{{ producto.ObservacionesProducto }}" id="ObservacionesProducto">
+                                    <label class="mdl-textfield__label" for="ObservacionesProducto">Observaciones Producto</label>
+                                    <span class="mdl-textfield__error">Observaciones inválidas</span>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +83,7 @@
                                 id="btn-addProduct">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </button>
-                        <div class="mdl-tooltip" for="btn-addProduct">Editar Objeto</div>
+                            <div class="mdl-tooltip" for="btn-addProduct">Editar Objeto</div>
                         </p>
                     </form>
                 </div>
@@ -89,4 +91,8 @@
         </div>
     </div>
 </div>
+{% else %}
+<p>Error: Producto no encontrado.</p>
+{% endif %}
+
 {% endblock %}

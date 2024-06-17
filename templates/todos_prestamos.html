@@ -46,7 +46,7 @@
                         <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Fecha y Hora del Préstamo</th>
                         <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Cantidad de Préstamo</th>
                         <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Estado del Préstamo</th>
-                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Observaciones del Prpestamo</th>
+                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Observaciones del Préstamo</th>
                         <th>Opciones</th>
                     </tr>
                 </thead>
@@ -62,7 +62,7 @@
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.ObservacionesPrestamo }}</td>
                         <td>
                             {% if mostrar.EstadoPrestamo == 'En curso' %}
-                                <a class="icon_edit" href="/editar_objeto/{{ mostrar.IdProductoGeneral }}" style="color: #39a900; text-decoration: none;">
+                                <a class="icon_edit" href="{{ url_for('culminar_prestamo', id=mostrar.IdProducto) }}" style="color: #39a900; text-decoration: none;">
                                     <i class="fa-solid fa-flag-checkered"></i> Culminar
                                 </a>
                             {% else %}

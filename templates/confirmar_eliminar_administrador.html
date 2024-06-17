@@ -83,7 +83,7 @@
     }
 </style>
 
-<a href="/mostrar_objetos" class="regresar">
+<a href="/mostrar_administradores" class="regresar">
     <i class="fas fa-arrow-left"></i> Regresar
 </a>
 
@@ -97,20 +97,25 @@
                     Confirmar Eliminación
                 </div>
                 <div class="full-width panel-content">
-                    <p>¿Estás seguro de que deseas eliminar el siguiente objeto?</p>
+                    <p>¿Estás seguro de que deseas eliminar el siguiente administrador?</p>
                     <ul style="display: contents;">
-                        <li><strong>Nombre:</strong> {{ producto.NombreProducto }}</li>
-                        <li><strong>Descripción:</strong> {{ producto.DescripcionProducto }}</li>
-                        <li><strong>Tipo:</strong> {{ producto.TipoProducto }}</li>
-                        <li><strong>Cantidad:</strong> {{ producto.CantidadProducto }}</li>
-                        <li><strong>Observaciones:</strong> {{ producto.ObservacionesProducto }}</li>
+                        <li><strong>Nombre:</strong> {{ usuario.NombreUsuario }}</li>
+                        <li><strong>Apellidos:</strong> {{ usuario.ApellidoUsuario }}</li>
+                        <li><strong>Tipo Identificación:</strong> {{ usuario.TipoIdentificacion }}</li>
+                        <li><strong>Número de Identificación:</strong> {{ usuario.NumeroIdentificacion }}</li>
+                        <li><strong>Correo:</strong> {{ usuario.CorreoUsuario }}</li>
+                        <li><strong>Número de Celular:</strong> {{ usuario.CelularUsuario }}</li>
+                        <li><strong>Contraseña:</strong> {{ usuario.ContrasenaUsuario }}</li>
                     </ul>
-                    <form method="POST" action="{{ url_for('eliminar_objeto', id=producto.IdProducto) }}">
-                        <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored_confi">
+                    <form method="POST" action="{{ url_for('eliminar_administrador', id=usuario.IdUsuario) }}">
+                        <button type="submit"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored_confi">
                             Confirmar Eliminación
                         </button>
                     </form>
-                    <a href="{{ url_for('inventario_objetos') }}" class="mdl-button mdl-js-button mdl-button--raised mdl-button--cancel" style="text-decoration: none; color: white;">
+                    <a href="{{ url_for('listar_administradores') }}"
+                        class="mdl-button mdl-js-button mdl-button--raised mdl-button--cancel"
+                        style="text-decoration: none; color: white;">
                         Cancelar
                     </a>
                 </div>
