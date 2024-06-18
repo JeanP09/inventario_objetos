@@ -3,16 +3,12 @@
 {% block title %}Culminar Préstamo - Inventario de Objetos{% endblock %}
 
 {% block content %}
-
-<!-- Contenido -->
-
-<a href="/mostrar_objetos" class="regresar" style="color: #39a900; text-decoration: none;">
+<a href="/prestamos" class="regresar" style="color: #39a900; text-decoration: none;">
     <i class="fas fa-arrow-left"></i> Regresar
 </a>
 
 <h1>Culminar Préstamo</h1>
 
-<!-- Formulario para culminar préstamo de objeto -->
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
@@ -21,85 +17,115 @@
                     Detalles del Objeto
                 </div>
                 <div class="full-width panel-content">
-                    <form method="POST" action="/culminar_prestamo/{{ objeto.IdProducto }}">
+                    <form method="POST" action="/register_devolucion/{{ prestamo.IdPrestamo }}">
                         <div class="mdl-grid">
-                            <input type="hidden" name="id_producto" value="{{ objeto.IdProducto }}">
+                            <!-- DATOS DEL PRÉSTAMO -->
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp;
+                                    DATOS DEL PRÉSTAMO</legend><br>
+                            </div>
+                            <input type="hidden" name="IdProducto" value="{{ prestamo.IdProducto }}">
+                            <input type="hidden" name="IdInstructor" value="{{ prestamo.IdInstructor }}">
                             <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="NombreProducto"
-                                        value="{{ objeto.IdProducto }}. {{ objeto.NombreProducto }}" readonly>
-                                    <label class="mdl-textfield__label" for="NombreProducto">Nombre Producto</label>
+                                    <input class="mdl-textfield__input" type="text" id="IdPrestamo"
+                                        value="{{ prestamo.IdPrestamo }}" readonly>
+                                    <label class="mdl-textfield__label" for="IdPrestamo">Id Préstamo</label>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="DescripcionProducto"
-                                        value="{{ objeto.DescripcionProducto }}" readonly>
-                                    <label class="mdl-textfield__label" for="DescripcionProducto">Descripción
-                                        Producto</label>
+                                    <input class="mdl-textfield__input" type="datetime-local" id="FechaHoraPrestamo"
+                                        value="{{ prestamo.FechaHoraPrestamo }}" readonly>
+                                    <label class="mdl-textfield__label" for="FechaHoraPrestamo">Fecha y Hora del
+                                        Préstamo</label>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="TipoProducto"
-                                        value="{{ objeto.TipoProducto }}" readonly>
-                                    <label class="mdl-textfield__label" for="TipoProducto">Tipo Producto</label>
+                                    <input class="mdl-textfield__input" type="number" id="CantidadPrestamo"
+                                        value="{{ prestamo.CantidadPrestamo }}" readonly>
+                                    <label class="mdl-textfield__label" for="CantidadPrestamo">Cantidad Préstamo</label>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="number" id="CantidadProducto"
-                                        value="{{ objeto.CantidadProducto }}" readonly>
-                                    <label class="mdl-textfield__label" for="CantidadProducto">Cantidad</label>
+                                    <input class="mdl-textfield__input" type="text" id="EstadoPrestamo"
+                                        value="{{ prestamo.EstadoPrestamo }}" readonly>
+                                    <label class="mdl-textfield__label" for="EstadoPrestamo">Estado Préstamo</label>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="ObservacionesProducto"
-                                        value="{{ objeto.ObservacionesProducto }}" readonly>
+                                    <input class="mdl-textfield__input" type="text" id="ObservacionesPrestamo"
+                                        value="{{ prestamo.ObservacionesPrestamo }}" readonly>
                                     <label class="mdl-textfield__label"
-                                        for="ObservacionesProducto">Observaciones</label>
+                                        for="ObservacionesPrestamo">Observaciones</label>
                                 </div>
                             </div>
 
+                            <!-- DATOS DE LA DEVOLUCIÓN -->
                             <div class="mdl-cell mdl-cell--12-col">
                                 <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i> &nbsp;
-                                    DATOS DEL PRÉSTAMO CULMINADO</legend><br>
+                                    DATOS DE LA DEVOLUCIÓN</legend><br>
                             </div>
                             <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
                                     style="margin-bottom: 20px;">
                                     <input type="datetime-local" class="mdl-textfield__input" style="padding-top: 20px;"
                                         min="2024-03-23T11:00" max="2030-11-23T11:00"
-                                        pattern="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}" id="FechaPrestamo" name="fecha_hora_devolucion" required>
+                                        pattern="\d{4}-\d{2}-\d{2}T\d{2}:\d{2}" id="FechaHoraDevolucion"
+                                        name="FechaHoraDevolucion" required>
                                     <label class="mdl-textfield__label" style="font-size: 14px; top: 8px;"
-                                        for="FechaPrestamo">Fecha y hora del préstamo</label>
+                                        for="FechaHoraDevolucion">Fecha y hora de devolución</label>
                                     <span class="mdl-textfield__error">Formato inválido</span>
-                                </div>
-                            </div>
-                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                                <div class="mdl-textfield mdl-js-textfield" style="margin-top: 17px;">
-                                    <select class="mdl-textfield__input select2" name="estado_devolucion"
-                                        id="EstadoPrestamo" required>
-                                        <option value="" disabled selected>Seleccionar Estado Devolución</option>
-                                        <option value="Bueno">Bueno</option>
-                                        <option value="Mal Estado">Mal Estado</option>
-                                    </select>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--12-col">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" pattern=".*"
-                                        id="ObservacionesDevolucion" name="observaciones" required>
-                                    <label class="mdl-textfield__label" for="ObservacionesDevolucion">Observaciones de
-                                        la Devolución</label>
+                                    <input class="mdl-textfield__input" type="number" id="CantidadDevolutiva"
+                                        name="CantidadDevolutiva" min="1" required>
+                                    <label class="mdl-textfield__label" for="CantidadDevolutiva">Cantidad
+                                        Devolutiva</label>
+                                    <span class="mdl-textfield__error">Cantidad Inválida</span>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <select class="mdl-textfield__input" name="EstadoDevolucion" id="EstadoDevolucion"
+                                        required>
+                                        <option value="" disabled selected></option>
+                                        <option value="Bueno">Bueno</option>
+                                        <option value="Mal Estado">Mal Estado</option>
+                                    </select>
+                                    <label class="mdl-textfield__label" for="EstadoDevolucion">Estado
+                                        Devolución</label>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <select class="mdl-textfield__input" name="EstadoPrestamo" id="EstadoPrestamo"
+                                        required>
+                                        <option value="" disabled selected></option>
+                                        <option value="Culminados">Culminados</option>
+                                    </select>
+                                    <label class="mdl-textfield__label" for="EstadoPrestamo">Estado
+                                        Préstamo</label>
+                                </div>
+                            </div>
+                            <div class="mdl-cell mdl-cell--12-col">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" type="text" id="Observaciones"
+                                        name="Observaciones" required>
+                                    <label class="mdl-textfield__label" for="Observaciones">Observaciones de la
+                                        Devolución</label>
                                     <span class="mdl-textfield__error">Observaciones Inválidas</span>
                                 </div>
                             </div>
                             <div class="mdl-cell mdl-cell--12-col">
                                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" pattern=".*"
-                                        id="ModoTiempoLugar" name="ModoTiempoLugar" required>
+                                    <input class="mdl-textfield__input" type="text" id="ModoTiempoLugar"
+                                        name="ModoTiempoLugar" required>
                                     <label class="mdl-textfield__label" for="ModoTiempoLugar">Modo Tiempo Lugar</label>
                                     <span class="mdl-textfield__error">Modo Tiempo Lugar Inválidos</span>
                                 </div>
@@ -120,22 +146,6 @@
     </div>
 </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        fetch('/get_instructores')
-            .then(response => response.json())
-            .then(data => {
-                const selectInstructor = document.getElementById('select_instructor');
-                data.forEach(instructor => {
-                    const option = document.createElement('option');
-                    option.value = instructor.id;
-                    option.textContent = instructor.nombre + ' ' + instructor.apellido;
-                    selectInstructor.appendChild(option);
-                });
-            })
-            .catch(error => console.error('Error al obtener los instructores:', error));
-    });
-</script>
 <script src="/static/javascripts/select_search.js"></script>
 
 {% endblock %}

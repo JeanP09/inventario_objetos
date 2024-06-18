@@ -35,7 +35,7 @@
                         Nuevo Administrador
                     </div>
                     <div class="full-width panel-content">
-                        <form method="POST" action="{{ url_for('registrar_administrador') }}">
+                        <form method="POST" action="{{ url_for('register_admin') }}">
                             <div class="mdl-grid">
                                 <div class="mdl-cell mdl-cell--12-col">
                                     <legend class="text-condensedLight"><i class="zmdi zmdi-border-color"></i>
@@ -137,7 +137,7 @@
         <br>
         {% if usuarios %}
         <p style="color: black;">Administradores encontrados: {{ usuarios|length }}</p>
-        <div class="mdl-grid">
+        <div class="mdl-grid" style="margin-left: -25px; margin-right: -25px;">
             <div
                 class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--8-col-desktop mdl-cell--2-offset-desktop">
                 <div class="full-width panel mdl-shadow--2dp">
@@ -154,6 +154,8 @@
                                         Identificación</th>
                                     <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Correo
                                         Administrador</th>
+                                    <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Contraseña
+                                    </th>
                                     <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">Celular
                                         Administrador</th>
                                     <th style="text-align: right;">Opciones</th>
@@ -172,6 +174,8 @@
                                         mostrar.NumeroIdentificacion }}</td>
                                     <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{
                                         mostrar.CorreoUsuario }}</td>
+                                        <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{
+                                            mostrar.ContrasenaUsuario }}</td>
                                     <td style="text-align: center;" class="mdl-data-table__cell--non-numeric">{{
                                         mostrar.CelularUsuario }}</td>
                                     <td>

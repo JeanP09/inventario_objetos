@@ -39,6 +39,8 @@ CREATE TABLE `devoluciones` (
     `FechaHoraDevolucion` datetime DEFAULT NULL,
     `EstadoDevolucion` enum('Bueno', 'Mal Estado') DEFAULT NULL,
     `Observaciones` varchar(225) DEFAULT NULL,
+    `EstadoPrestamo` enum('Culminados') DEFAULT NULL,
+    `CantidadDevolutiva` int(11) DEFAULT NULL,
     `ModoTiempoLugar` varchar(225) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -202,14 +204,16 @@ ALTER TABLE `devoluciones`
 ALTER TABLE `prestamos`
     ADD CONSTRAINT `prestamos_ibfk_1` FOREIGN KEY (`IdInstructor`) REFERENCES `instructores` (`IdInstructor`),
     ADD CONSTRAINT `prestamos_ibfk_2` FOREIGN KEY (`IdProducto`) REFERENCES `productosgenerales` (`IdProducto`);
-    
+
+
+
+
 --
 -- Inserts para la tabla `prestamos`
 --
 INSERT INTO prestamos (IdInstructor, IdProducto, FechaHoraPrestamo, CantidadPrestamo, EstadoPrestamo, ObservacionesPrestamo)
 VALUES
-    (1, 4, '2024-06-12 10:30:00', 2, 'En curso', 'N/A'),
-    (2, 3, '2024-06-13 11:45:00', 1, 'Culminados', 'Cable deteriorado');
+    (1, 3, '2024-06-12 10:30:00', 5, 'En curso', 'N/A');
 SELECT * FROM prestamos;
 
 --
@@ -248,7 +252,56 @@ WHERE p.EstadoPrestamo = 'Culminados';
 SELECT * FROM prestamos_culminados;
 
 
+DELIMITER //
 
+CREATE TRIGGER actualizar_cantidad_producto
+AFTER INSERT ON devoluciones
+FOR EACH ROW
+BEGIN
+    DECLARE CantidadDevolutiva INT;
+
+    SELECT NEW.CantidadDevolutiva INTO CantidadDevolutiva;
+
+    UPDATE productosgenerales
+    SET CantidadProducto = CantidadProducto + CantidadDevolutiva
+    WHERE IdProducto = NEW.IdProducto;
+END;
+//
+
+DELIMITER ;
+
+
+DELIMITER //
+
+CREATE TRIGGER sumar_cantidad_prestamo
+AFTER INSERT ON devoluciones
+FOR EACH ROW
+BEGIN
+    UPDATE prestamos
+    SET CantidadPrestamo = CantidadPrestamo + NEW.CantidadDevolutiva
+    WHERE IdProducto = NEW.IdProducto;
+END;
+//
+
+DELIMITER ;
+
+
+
+
+DELIMITER //
+
+CREATE TRIGGER restar_cantidad_producto
+AFTER INSERT ON prestamos
+FOR EACH ROW
+BEGIN
+    UPDATE productosgenerales
+    SET CantidadProducto = CantidadProducto - NEW.CantidadPrestamo
+    WHERE IdProducto = NEW.IdProducto;
+END;
+
+//
+
+DELIMITER ;
 
 COMMIT;
 

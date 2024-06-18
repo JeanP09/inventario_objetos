@@ -32,7 +32,7 @@
 </div>
 
 <div class="full-width divider-menu-h"></div>
-<div class="mdl-grid" style=" margin-left: 5px; margin-right: 5px;">
+<div class="mdl-grid" style="margin-left: -10px; margin-right: -10px;">
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
         <div class="table-responsive">
             {% if prestamos %}
@@ -54,7 +54,7 @@
                     {% for mostrar in prestamos %}
                     <tr>
                         <td style="text-align: center;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdPrestamo }}</td>
-                        <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdInstructor }} - {{ mostrar.NombreInstructor }} </td>
+                        <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdInstructor }} - {{ mostrar.NombreInstructor }} {{ mostrar.ApellidoInstructor }}</td>
                         <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdProducto }} - {{ mostrar.NombreProducto }}</td>
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.FechaHoraPrestamo }}</td>
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.CantidadPrestamo }}</td>
@@ -62,7 +62,7 @@
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.ObservacionesPrestamo }}</td>
                         <td>
                             {% if mostrar.EstadoPrestamo == 'En curso' %}
-                                <a class="icon_edit" href="{{ url_for('culminar_prestamo', id=mostrar.IdProducto) }}" style="color: #39a900; text-decoration: none;">
+                                <a class="icon_edit" href="{{ url_for('register_devolucion', id=mostrar.IdProducto) }}" style="color: #39a900; text-decoration: none;">
                                     <i class="fa-solid fa-flag-checkered"></i> Culminar
                                 </a>
                             {% else %}
