@@ -7,7 +7,7 @@
     <i class="fas fa-arrow-left"></i> Regresar
 </a>
 
-<h1>Todos En Curso</h1>
+<h1>Préstamos En Curso</h1>
 
 <div class="search-container">
     <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container" autocomplete="off">
@@ -32,7 +32,7 @@
 </div>
 
 <div class="full-width divider-menu-h"></div>
-<div class="mdl-grid" style="margin-left: -10px; margin-right: -10px;">
+<div class="mdl-grid" style=" margin-left: 5px; margin-right: 5px;">
     <div class="mdl-cell mdl-cell--4-col-phone mdl-cell--8-col-tablet mdl-cell--12-col-desktop">
         <div class="table-responsive">
             {% if prestamos %}
@@ -44,10 +44,10 @@
                         <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">ID - Instructor</th>
                         <th style="text-align: left;" class="mdl-data-table__cell--non-numeric">ID - Producto</th>
                         <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Fecha y Hora del Préstamo</th>
-                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Cantidad de  Préstamo</th>
+                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Cantidad de Préstamo</th>
                         <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Estado del Préstamo</th>
                         <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Observaciones del Préstamo</th>
-                        <th>Opciones</th>
+                        <th style="text-align: end;" class="mdl-data-table__cell--non-numeric">Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,11 +57,11 @@
                         <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdInstructor }} - {{ mostrar.NombreInstructor }} {{ mostrar.ApellidoInstructor }}</td>
                         <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdProducto }} - {{ mostrar.NombreProducto }}</td>
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.FechaHoraPrestamo }}</td>
-                        <td style="text-align: center;" class="mdl-data-table__cell--non-numeric">{{ mostrar.CantidadPrestamo }}</td>
+                        <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.CantidadPrestamo }}</td>
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.EstadoPrestamo }}</td>
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.ObservacionesPrestamo }}</td>
                         <td>
-                            <a class="icon_edit" href="{{ url_for('culminar_prestamo', id=mostrar.IdProducto) }}" style="color: #39a900; text-decoration: none;"><i class="fa-solid fa-flag-checkered"></i> Culminar</a>
+                            <a class="icon_edit" href="{{ url_for('register_devolucion', id=mostrar.IdProducto) }}" style="color: #39a900; text-decoration: none;"><i class="fa-solid fa-flag-checkered"></i> Culminar</a>
                         </td>
                     </tr>
                     {% endfor %}
@@ -74,4 +74,3 @@
     </div>
 </div>
 {% endblock %}
-

@@ -54,7 +54,6 @@ def BuscarObjeto():
 
 # MOSTRAR INVENTARIO
 
-
 def mostrar_inventario():
     try:
         connection = connectionBD()
@@ -145,15 +144,17 @@ def mostrar_prestamos_en_curso():
         cursor = connection.cursor(dictionary=True)
         cursor.execute("SELECT * FROM prestamos_en_curso")
         prestamos = cursor.fetchall()
+        print("Prestamos en curso:", prestamos)
         cursor.close()
         connection.close()
         return render_template("prestamos_en_curso.html", prestamos=prestamos)
     except Exception as e:
-        print(f"Error en la función mostrar_prestamos: {e}")
+        print(f"Error en la función mostrar_prestamos_en_curso: {e}")
         return render_template("prestamos_en_curso.html", prestamos=[])
     finally:
         if connection.is_connected():
             connection.close()
+
             
 # MOSTRAR PRÉSTAMOS CULMINADOS
 def mostrar_prestamos_culminados():
@@ -171,4 +172,3 @@ def mostrar_prestamos_culminados():
     finally:
         if connection.is_connected():
             connection.close()
-            
