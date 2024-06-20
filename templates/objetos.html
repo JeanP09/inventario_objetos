@@ -112,7 +112,7 @@
     <br>
 
     <div class="mdl-tabs__panel" id="tabListProducts">
-        <form name="formSearch" method="POST" action="" class="search-container"
+        <form name="formSearch" method="POST" action="{{ url_for('search_route') }}" class="search-container"
             autocomplete="off">
             <input type="search" name="buscar" class="search_input" placeholder="Buscar...">
             <button type="submit" class="search_btn">
