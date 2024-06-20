@@ -57,18 +57,18 @@
                         <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdInstructor }} - {{ mostrar.NombreInstructor }} {{ mostrar.ApellidoInstructor }}</td>
                         <td style="text-align: left;" class="mdl-data-table__cell--non-numeric">{{ mostrar.IdProducto }} - {{ mostrar.NombreProducto }}</td>
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.FechaHoraPrestamo }}</td>
-                        <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.CantidadPrestamo }}</td>
-                        <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.EstadoPrestamo }}</td>
+                        <td style="text-align: center;" class="mdl-data-table__cell--non-numeric">{{ mostrar.CantidadPrestamo }}</td>
+                        <td style="text-align: center;" class="mdl-data-table__cell--non-numeric">{{ mostrar.EstadoPrestamo }}</td>
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.ObservacionesPrestamo }}</td>
                         <td>
-                            <a class="icon_edit" href="{{ url_for('register_devolucion', id=mostrar.IdProducto) }}" style="color: #39a900; text-decoration: none;"><i class="fa-solid fa-flag-checkered"></i> Culminar</a>
+                            <a class="icon_edit" href="{{ url_for('confirmar_devolucion_objeto', id=mostrar.IdPrestamo) }}" style="color: #39a900; text-decoration: none;"><i class="fa-solid fa-flag-checkered"></i> Culminar</a>
                         </td>
                     </tr>
                     {% endfor %}
                 </tbody>
             </table>
             {% else %}
-            <p>No hay préstamos para mostrar.</p>
+            <p>No hay préstamos en curso para mostrar.</p>
             {% endif %}
         </div>
     </div>

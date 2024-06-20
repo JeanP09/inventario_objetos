@@ -137,6 +137,8 @@ def confirmar_prestamo_objeto(id):
             connection.close()
         return redirect(url_for('mostrar_objetos'))
 
+
+
 # REGISTRAR PRÉSTAMO - FUNCIONA
 @app.route('/registrar_prestamo', methods=['POST'])
 def registrar_prestamo():
@@ -166,8 +168,6 @@ def registrar_prestamo():
         if 'connection' in locals() and connection.is_connected():
             connection.close()
         return redirect(url_for('listar_objetos'))
-
-
 
 
 # REGISTRAR PRODUCTO - FUNCIONA
@@ -514,15 +514,62 @@ def confirmar_eliminar_administrador(id):
         return redirect(url_for('listar_administradores'))
 
 
-
-
-
-
-
 # MOSTRAR PRÉSTAMOS
 @app.route('/mostrar_prestamos', methods=["GET", "POST"])
 def listar_prestamos():
     return mostrar_prestamos()
+
+
+# CULMINAR PRESTAMO
+@app.route('/confirmar_devolucion_objeto/<int:id>', methods=['GET'])
+def confirmar_devolucion_objeto(id):
+    try:
+        connection = connectionBD()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute("SELECT * FROM prestamos WHERE IdPrestamo = %s", (id,))
+        prestamo = cursor.fetchone()
+        cursor.close()
+        connection.close()
+        return render_template('confirmar_devolucion_objeto.html', prestamo=prestamo)
+
+    except Exception as e:
+        print(f"Error al obtener el prestamo para devolución: {e}")
+        if 'connection' in locals() and connection.is_connected():
+            connection.close()
+        return redirect(url_for('listar_prestamos'))
+    
+# REGISTRAR DEVOLUCIÓN
+@app.route('/registrar_devolucion', methods=['POST'])
+def registrar_devolucion():
+    try:
+        idinstructor = request.form.get('IdInstructor')
+        idprestamo = request.form.get('IdPrestamo')
+        idproducto = request.form.get('IdProducto')
+        fechahoradevolucion = request.form.get('FechaHoraDevolucion')
+        estadodevolucion = request.form.get('EstadoDevolucion')
+        observacionesdevolucion = request.form.get('Observaciones')
+        estadoprestamo = request.form.get('EstadoPrestamo')
+        cantidaddevolutiva = request.form.get('CantidadDevolutiva')
+        modotiempolugar = request.form.get('ModoTiempoLugar')
+
+        connection = connectionBD()
+        cursor = connection.cursor()
+        cursor.execute(
+            """
+            INSERT INTO devoluciones (IdInstructor, IdPrestamo, IdProducto, FechaHoraDevolucion, EstadoDevolucion, Observaciones, EstadoPrestamo, CantidadDevolutiva, ModoTiempoLugar)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (idinstructor, idprestamo, idproducto, fechahoradevolucion, estadodevolucion, observacionesdevolucion, estadoprestamo, cantidaddevolutiva, modotiempolugar)
+        )
+        connection.commit()
+        cursor.close()
+        connection.close()
+        return redirect(url_for('listar_prestamos'))
+    except Exception as e:
+        print(f"Error al registrar la devolución: {e}")
+        if 'connection' in locals() and connection.is_connected():
+            connection.close()
+        return redirect(url_for('listar_prestamos'))
 
 # MOSTRAR PRÉSTAMOS EN CURSO
 @app.route('/mostrar_prestamos_en_curso', methods=["GET", "POST"])
@@ -537,105 +584,6 @@ def listar_prestamos_culminados():
 
 
 
-
-
-
-
-
-# CULMINAR PRÉSTAMO - NO FUNCIONA
-@app.route('/register_devolucion/<int:id>', methods=['GET', 'POST'])
-def register_devolucion(id):
-    if request.method == 'POST':
-        try:
-            fecha_hora_dev = request.form['FechaHoraDevolucion']
-            estado_devolucion = request.form['EstadoDevolucion']
-            observaciones = request.form['Observaciones']
-            estado_prestamo = request.form['EstadoPrestamo']
-            cantidad_devolutiva = int(request.form['CantidadDevolutiva'])
-            modo_tiempo_lugar = request.form['ModoTiempoLugar']
-            id_producto = int(request.form['IdProducto'])
-            id_instructor = int(request.form['IdInstructor'])
-
-            connection = connectionBD()
-            cursor = connection.cursor()
-
-            cursor.execute("""
-                INSERT INTO devoluciones (IdInstructor, IdPrestamo, IdProducto, FechaHoraDevolucion, EstadoDevolucion, Observaciones, EstadoPrestamo, CantidadDevolutiva, ModoTiempoLugar)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """, (id_instructor, id, id_producto, fecha_hora_dev, estado_devolucion, observaciones, estado_prestamo, cantidad_devolutiva, modo_tiempo_lugar))
-
-            cursor.execute("""
-                UPDATE prestamos
-                SET EstadoPrestamo = %s
-                WHERE IdPrestamo = %s
-            """, ('Culminados', id))
-
-            connection.commit()
-            cursor.close()
-            connection.close()
-
-            return redirect(url_for('listar_prestamos_culminados'))
-
-        except Exception as e:
-            print(f"Error al culminar el préstamo: {e}")
-            if 'connection' in locals() and connection.is_connected():
-                connection.close()
-            return render_template('error.html', error=True)
-
-    else:
-        try:
-            connection = connectionBD()
-            cursor = connection.cursor(dictionary=True)
-
-            cursor.execute("SELECT * FROM prestamos WHERE IdPrestamo = %s", (id,))
-            prestamo = cursor.fetchone()
-
-            cursor.close()
-            connection.close()
-
-            return render_template('culminar_prestamo.html', prestamo=prestamo)
-
-        except Exception as e:
-            print(f"Error al obtener la información del préstamo: {e}")
-            if 'connection' in locals() and connection.is_connected():
-                connection.close()
-            return redirect(url_for('listar_prestamos'))
-
-
-
-
-# REGISTRAR DEVOLUCIÓN
-@app.route('/registrar_devolucion', methods=['POST'])
-def registrar_devolucion():
-    try:
-        id_instructor = request.form.get('IdInstructor')
-        id_prestamo = request.form.get('IdPrestamo')
-        id_producto = request.form.get('IdProducto')
-        fecha_devolucion = request.form.get('FechaHoraDevolucion')
-        estado_devolucion = request.form.get('EstadoDevolucion')
-        observaciones = request.form.get('Observaciones')
-        estado_prestamo = request.form.get('EstadoPrestamo')
-        cantidad_devolutiva = request.form.get('CantidadDevolutiva')
-        modo_tiempo_lugar = request.form.get('ModoTiempoLugar')
-
-        connection = connectionBD()
-        cursor = connection.cursor()
-        cursor.execute(
-            """
-            INSERT INTO devoluciones (IdInstructor, IdPrestamo, IdProducto, FechaHoraDevolucion, EstadoDevolucion, Observaciones, EstadoPrestamo, CantidadDevolutiva, ModoTiempoLugar)
-            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """,
-            (id_instructor, id_prestamo, id_producto, fecha_devolucion, estado_devolucion, observaciones, estado_prestamo, cantidad_devolutiva, modo_tiempo_lugar)
-        )
-        connection.commit()
-        cursor.close()
-        connection.close()
-        return redirect(url_for('listar_objetos'))
-    except Exception as e:
-        print(f"Error al registrar la devolución: {e}")
-        if 'connection' in locals() and connection.is_connected():
-            connection.close()
-        return redirect(url_for('listar_objetos'))
 
 
 # REDIRECCIONANDO CUANDO LA PAGINA NO EXISTE

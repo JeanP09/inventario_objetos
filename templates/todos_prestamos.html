@@ -62,7 +62,7 @@
                         <td style="text-align: end;" class="mdl-data-table__cell--non-numeric">{{ mostrar.ObservacionesPrestamo }}</td>
                         <td>
                             {% if mostrar.EstadoPrestamo == 'En curso' %}
-                                <a class="icon_edit" href="{{ url_for('register_devolucion', id=mostrar.IdProducto) }}" style="color: #39a900; text-decoration: none;">
+                                <a class="icon_edit" href="{{ url_for('confirmar_devolucion_objeto', id=mostrar.IdPrestamo) }}" style="color: #39a900; text-decoration: none;">
                                     <i class="fa-solid fa-flag-checkered"></i> Culminar
                                 </a>
                             {% else %}

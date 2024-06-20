@@ -213,24 +213,51 @@ ALTER TABLE `prestamos`
 --
 INSERT INTO prestamos (IdInstructor, IdProducto, FechaHoraPrestamo, CantidadPrestamo, EstadoPrestamo, ObservacionesPrestamo)
 VALUES
-    (1, 3, '2024-06-12 10:30:00', 5, 'En curso', 'N/A');
+    (1, 4, '2024-06-12 10:30:00', 1, 'En curso', 'N/A'),
+    (2, 1, '2024-06-12 10:30:00', 1, 'En curso', 'N/A');
 SELECT * FROM prestamos;
 
 --
 -- Vista para la tabla `prestamos`
 --
 CREATE VIEW vista_prestamos AS
-SELECT p.IdPrestamo, p.IdInstructor, i.NombreInstructor, p.IdProducto, pg.NombreProducto, p.FechaHoraPrestamo, p.CantidadPrestamo, p.EstadoPrestamo, p.ObservacionesPrestamo
+SELECT p.IdPrestamo, p.IdInstructor, i.NombreInstructor, i.ApellidoInstructor, p.IdProducto, pg.NombreProducto, p.FechaHoraPrestamo, p.CantidadPrestamo, p.EstadoPrestamo, p.ObservacionesPrestamo
 FROM prestamos p
 JOIN productosgenerales pg ON p.IdProducto = pg.IdProducto
 JOIN instructores i ON p.IdInstructor = i.IdInstructor;
 
 SELECT * FROM vista_prestamos;
 
+--
+-- Vista para la tabla `devoluciones`
+--
+CREATE VIEW vista_devoluciones AS
+SELECT 
+    d.IdDevoluciones,
+    d.IdInstructor,
+    i.NombreInstructor,
+    d.IdPrestamo,
+    d.IdProducto,
+    pg.NombreProducto,
+    d.FechaHoraDevolucion,
+    d.EstadoDevolucion,
+    d.Observaciones,
+    d.EstadoPrestamo,
+    d.CantidadDevolutiva,
+    d.ModoTiempoLugar
+FROM 
+    devoluciones d
+JOIN 
+    instructores i ON d.IdInstructor = i.IdInstructor
+JOIN 
+    productosgenerales pg ON d.IdProducto = pg.IdProducto;
+
+SELECT * FROM vista_devoluciones;
+
 
 
 CREATE VIEW prestamos_en_curso AS
-SELECT p.IdPrestamo, p.IdInstructor, i.NombreInstructor, p.IdProducto, pg.NombreProducto, 
+SELECT p.IdPrestamo, p.IdInstructor, i.NombreInstructor, i.ApellidoInstructor, p.IdProducto, pg.NombreProducto, 
     p.FechaHoraPrestamo, p.CantidadPrestamo, p.EstadoPrestamo, p.ObservacionesPrestamo
 FROM prestamos p
 JOIN productosgenerales pg ON p.IdProducto = pg.IdProducto
@@ -241,15 +268,22 @@ SELECT * FROM prestamos_en_curso;
 
 
 
-CREATE VIEW prestamos_culminados AS
-SELECT p.IdPrestamo, p.IdInstructor, i.NombreInstructor, p.IdProducto, pg.NombreProducto, 
-    p.FechaHoraPrestamo, p.CantidadPrestamo, p.EstadoPrestamo, p.ObservacionesPrestamo
-FROM prestamos p
-JOIN productosgenerales pg ON p.IdProducto = pg.IdProducto
-JOIN instructores i ON p.IdInstructor = i.IdInstructor
-WHERE p.EstadoPrestamo = 'Culminados';
 
-SELECT * FROM prestamos_culminados;
+DELIMITER //
+
+CREATE TRIGGER actualizar_estado_prestamo
+AFTER INSERT ON devoluciones
+FOR EACH ROW
+BEGIN
+    IF NEW.EstadoPrestamo = 'Culminados' THEN
+        UPDATE prestamos
+        SET EstadoPrestamo = 'Culminados'
+        WHERE IdProducto = NEW.IdProducto;
+    END IF;
+END;
+//
+
+DELIMITER ;
 
 
 DELIMITER //
@@ -258,12 +292,8 @@ CREATE TRIGGER actualizar_cantidad_producto
 AFTER INSERT ON devoluciones
 FOR EACH ROW
 BEGIN
-    DECLARE CantidadDevolutiva INT;
-
-    SELECT NEW.CantidadDevolutiva INTO CantidadDevolutiva;
-
     UPDATE productosgenerales
-    SET CantidadProducto = CantidadProducto + CantidadDevolutiva
+    SET CantidadProducto = CantidadProducto + NEW.CantidadDevolutiva
     WHERE IdProducto = NEW.IdProducto;
 END;
 //
@@ -271,19 +301,6 @@ END;
 DELIMITER ;
 
 
-DELIMITER //
-
-CREATE TRIGGER sumar_cantidad_prestamo
-AFTER INSERT ON devoluciones
-FOR EACH ROW
-BEGIN
-    UPDATE prestamos
-    SET CantidadPrestamo = CantidadPrestamo + NEW.CantidadDevolutiva
-    WHERE IdProducto = NEW.IdProducto;
-END;
-//
-
-DELIMITER ;
 
 
 
