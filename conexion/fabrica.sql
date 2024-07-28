@@ -101,7 +101,7 @@ CREATE TABLE `usuarios` (
     `NombreUsuario` varchar(255) DEFAULT NULL,
     `ApellidoUsuario` varchar(255) DEFAULT NULL,
     `TipoIdentificacion` enum('CC','TI') DEFAULT NULL,
-    `NumeroIdentificacion` int(11) DEFAULT NULL,
+    `NumeroIdentificacion` int(15) DEFAULT NULL,
     `CorreoUsuario` varchar(255) DEFAULT NULL,
     `CelularUsuario` int(11) DEFAULT NULL,
     `ContrasenaUsuario` varchar(50),
@@ -122,7 +122,7 @@ CREATE TABLE `instructores` (
     `NombreInstructor` varchar(255) DEFAULT NULL,
     `ApellidoInstructor` varchar(255) DEFAULT NULL,
     `TipoIdentificacion` enum('CC','TI') DEFAULT NULL,
-    `NumeroIdentificacion` int(11) DEFAULT NULL,
+    `NumeroIdentificacion` int(15) DEFAULT NULL,
     `CorreoInstructor` varchar(255) DEFAULT NULL,
     `CelularInstructor` int(11) DEFAULT NULL,
     PRIMARY KEY (`IdInstructor`)
